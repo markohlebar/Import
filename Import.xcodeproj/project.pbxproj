@@ -11,6 +11,10 @@
 		9624F5461DA43C9B005B57F4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9624F5451DA43C9B005B57F4 /* Assets.xcassets */; };
 		9624F5491DA43C9B005B57F4 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9624F5471DA43C9B005B57F4 /* MainMenu.xib */; };
 		9624F5541DA43C9B005B57F4 /* ImportTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9624F5531DA43C9B005B57F4 /* ImportTests.swift */; };
+		9624F5651DA43CBD005B57F4 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9624F5641DA43CBD005B57F4 /* Cocoa.framework */; };
+		9624F56A1DA43CBD005B57F4 /* SourceEditorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9624F5691DA43CBD005B57F4 /* SourceEditorExtension.swift */; };
+		9624F56C1DA43CBD005B57F4 /* SourceEditorCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9624F56B1DA43CBD005B57F4 /* SourceEditorCommand.swift */; };
+		9624F5701DA43CBD005B57F4 /* ImportExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 9624F5621DA43CBD005B57F4 /* ImportExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -21,7 +25,28 @@
 			remoteGlobalIDString = 9624F53F1DA43C9B005B57F4;
 			remoteInfo = Import;
 		};
+		9624F56E1DA43CBD005B57F4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9624F5381DA43C9B005B57F4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9624F5611DA43CBD005B57F4;
+			remoteInfo = ImportExtension;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		9624F5741DA43CBD005B57F4 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				9624F5701DA43CBD005B57F4 /* ImportExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		9624F5401DA43C9B005B57F4 /* Import.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Import.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -32,6 +57,12 @@
 		9624F54F1DA43C9B005B57F4 /* ImportTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ImportTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9624F5531DA43C9B005B57F4 /* ImportTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportTests.swift; sourceTree = "<group>"; };
 		9624F5551DA43C9B005B57F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9624F5621DA43CBD005B57F4 /* ImportExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ImportExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		9624F5641DA43CBD005B57F4 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		9624F5681DA43CBD005B57F4 /* ImportExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ImportExtension.entitlements; sourceTree = "<group>"; };
+		9624F5691DA43CBD005B57F4 /* SourceEditorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceEditorExtension.swift; sourceTree = "<group>"; };
+		9624F56B1DA43CBD005B57F4 /* SourceEditorCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceEditorCommand.swift; sourceTree = "<group>"; };
+		9624F56D1DA43CBD005B57F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +80,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		9624F55F1DA43CBD005B57F4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9624F5651DA43CBD005B57F4 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -57,6 +96,8 @@
 			children = (
 				9624F5421DA43C9B005B57F4 /* Import */,
 				9624F5521DA43C9B005B57F4 /* ImportTests */,
+				9624F5661DA43CBD005B57F4 /* ImportExtension */,
+				9624F5631DA43CBD005B57F4 /* Frameworks */,
 				9624F5411DA43C9B005B57F4 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -66,6 +107,7 @@
 			children = (
 				9624F5401DA43C9B005B57F4 /* Import.app */,
 				9624F54F1DA43C9B005B57F4 /* ImportTests.xctest */,
+				9624F5621DA43CBD005B57F4 /* ImportExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -90,6 +132,33 @@
 			path = ImportTests;
 			sourceTree = "<group>";
 		};
+		9624F5631DA43CBD005B57F4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9624F5641DA43CBD005B57F4 /* Cocoa.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9624F5661DA43CBD005B57F4 /* ImportExtension */ = {
+			isa = PBXGroup;
+			children = (
+				9624F5691DA43CBD005B57F4 /* SourceEditorExtension.swift */,
+				9624F56B1DA43CBD005B57F4 /* SourceEditorCommand.swift */,
+				9624F56D1DA43CBD005B57F4 /* Info.plist */,
+				9624F5671DA43CBD005B57F4 /* Supporting Files */,
+			);
+			path = ImportExtension;
+			sourceTree = "<group>";
+		};
+		9624F5671DA43CBD005B57F4 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9624F5681DA43CBD005B57F4 /* ImportExtension.entitlements */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -100,10 +169,12 @@
 				9624F53C1DA43C9B005B57F4 /* Sources */,
 				9624F53D1DA43C9B005B57F4 /* Frameworks */,
 				9624F53E1DA43C9B005B57F4 /* Resources */,
+				9624F5741DA43CBD005B57F4 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				9624F56F1DA43CBD005B57F4 /* PBXTargetDependency */,
 			);
 			name = Import;
 			productName = Import;
@@ -128,6 +199,23 @@
 			productReference = 9624F54F1DA43C9B005B57F4 /* ImportTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		9624F5611DA43CBD005B57F4 /* ImportExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9624F5711DA43CBD005B57F4 /* Build configuration list for PBXNativeTarget "ImportExtension" */;
+			buildPhases = (
+				9624F55E1DA43CBD005B57F4 /* Sources */,
+				9624F55F1DA43CBD005B57F4 /* Frameworks */,
+				9624F5601DA43CBD005B57F4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ImportExtension;
+			productName = ImportExtension;
+			productReference = 9624F5621DA43CBD005B57F4 /* ImportExtension.appex */;
+			productType = "com.apple.product-type.xcode-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -149,6 +237,11 @@
 						ProvisioningStyle = Automatic;
 						TestTargetID = 9624F53F1DA43C9B005B57F4;
 					};
+					9624F5611DA43CBD005B57F4 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 7LN5U2P4GE;
+						ProvisioningStyle = Automatic;
+					};
 				};
 			};
 			buildConfigurationList = 9624F53B1DA43C9B005B57F4 /* Build configuration list for PBXProject "Import" */;
@@ -165,6 +258,7 @@
 			projectRoot = "";
 			targets = (
 				9624F53F1DA43C9B005B57F4 /* Import */,
+				9624F5611DA43CBD005B57F4 /* ImportExtension */,
 				9624F54E1DA43C9B005B57F4 /* ImportTests */,
 			);
 		};
@@ -181,6 +275,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		9624F54D1DA43C9B005B57F4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9624F5601DA43CBD005B57F4 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -206,6 +307,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		9624F55E1DA43CBD005B57F4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9624F56A1DA43CBD005B57F4 /* SourceEditorExtension.swift in Sources */,
+				9624F56C1DA43CBD005B57F4 /* SourceEditorCommand.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -213,6 +323,11 @@
 			isa = PBXTargetDependency;
 			target = 9624F53F1DA43C9B005B57F4 /* Import */;
 			targetProxy = 9624F5501DA43C9B005B57F4 /* PBXContainerItemProxy */;
+		};
+		9624F56F1DA43CBD005B57F4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9624F5611DA43CBD005B57F4 /* ImportExtension */;
+			targetProxy = 9624F56E1DA43CBD005B57F4 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -321,7 +436,9 @@
 		9624F5591DA43C9B005B57F4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 7LN5U2P4GE;
 				INFOPLIST_FILE = Import/Info.plist;
@@ -335,7 +452,9 @@
 		9624F55A1DA43C9B005B57F4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 7LN5U2P4GE;
 				INFOPLIST_FILE = Import/Info.plist;
@@ -378,6 +497,40 @@
 			};
 			name = Release;
 		};
+		9624F5721DA43CBD005B57F4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = ImportExtension/ImportExtension.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 7LN5U2P4GE;
+				INFOPLIST_FILE = ImportExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = com.squid.Import.ImportExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		9624F5731DA43CBD005B57F4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = ImportExtension/ImportExtension.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 7LN5U2P4GE;
+				INFOPLIST_FILE = ImportExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = com.squid.Import.ImportExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -397,6 +550,7 @@
 				9624F55A1DA43C9B005B57F4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9624F55B1DA43C9B005B57F4 /* Build configuration list for PBXNativeTarget "ImportTests" */ = {
 			isa = XCConfigurationList;
@@ -405,6 +559,16 @@
 				9624F55D1DA43C9B005B57F4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9624F5711DA43CBD005B57F4 /* Build configuration list for PBXNativeTarget "ImportExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9624F5721DA43CBD005B57F4 /* Debug */,
+				9624F5731DA43CBD005B57F4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
