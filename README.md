@@ -6,6 +6,7 @@ Xcode extension for adding imports from anywhere in the code
 ### Installation Guide (Xcode 8 / macOS 10.12)
 
 - close Xcode
+- (OSX 10.11) `sudo /usr/libexec/xpccachectl`
 - download the [Import app](https://github.com/markohlebar/Import/releases/download/1.0.0/Import.app.zip)
 - unzip and copy to Applications folder
 - run (right click + open)
