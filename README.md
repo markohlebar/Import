@@ -7,7 +7,7 @@ Xcode extension for adding imports from anywhere in the code
 
 - close Xcode
 - (*OSX 10.11 only*) `sudo /usr/libexec/xpccachectl`
-- download the [Import app](https://github.com/markohlebar/Import/releases/download/1.0.0/Import.app.zip)
+- download the [Import app](https://github.com/markohlebar/Import/releases/download/1.0.1/Import.app.zip)
 - unzip and copy to Applications folder
 - run (right click + open)
 - (*optional*) click on **Install Key Bindings** to install `⌘ + ctrl + P` binding
