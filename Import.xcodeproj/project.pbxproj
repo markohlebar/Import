@@ -15,6 +15,7 @@
 		9624F56A1DA43CBD005B57F4 /* SourceEditorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9624F5691DA43CBD005B57F4 /* SourceEditorExtension.swift */; };
 		9624F56C1DA43CBD005B57F4 /* SourceEditorCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9624F56B1DA43CBD005B57F4 /* SourceEditorCommand.swift */; };
 		9624F5701DA43CBD005B57F4 /* ImportExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 9624F5621DA43CBD005B57F4 /* ImportExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		96BFA7D71DA4B9CE005B37E2 /* AddImportOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BFA7D61DA4B9CE005B37E2 /* AddImportOperation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		9624F5691DA43CBD005B57F4 /* SourceEditorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceEditorExtension.swift; sourceTree = "<group>"; };
 		9624F56B1DA43CBD005B57F4 /* SourceEditorCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceEditorCommand.swift; sourceTree = "<group>"; };
 		9624F56D1DA43CBD005B57F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		96BFA7D61DA4B9CE005B37E2 /* AddImportOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddImportOperation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +147,7 @@
 			children = (
 				9624F5691DA43CBD005B57F4 /* SourceEditorExtension.swift */,
 				9624F56B1DA43CBD005B57F4 /* SourceEditorCommand.swift */,
+				96BFA7D61DA4B9CE005B37E2 /* AddImportOperation.swift */,
 				9624F56D1DA43CBD005B57F4 /* Info.plist */,
 				9624F5671DA43CBD005B57F4 /* Supporting Files */,
 			);
@@ -311,6 +314,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96BFA7D71DA4B9CE005B37E2 /* AddImportOperation.swift in Sources */,
 				9624F56A1DA43CBD005B57F4 /* SourceEditorExtension.swift in Sources */,
 				9624F56C1DA43CBD005B57F4 /* SourceEditorCommand.swift in Sources */,
 			);
