@@ -16,6 +16,9 @@
 		9624F56C1DA43CBD005B57F4 /* SourceEditorCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9624F56B1DA43CBD005B57F4 /* SourceEditorCommand.swift */; };
 		9624F5701DA43CBD005B57F4 /* ImportExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 9624F5621DA43CBD005B57F4 /* ImportExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		96BFA7D71DA4B9CE005B37E2 /* AddImportOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BFA7D61DA4B9CE005B37E2 /* AddImportOperation.swift */; };
+		96E7A0F61DA4E82C0069F088 /* RootWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E7A0F41DA4E82C0069F088 /* RootWindowController.swift */; };
+		96E7A0F71DA4E82C0069F088 /* RootWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96E7A0F51DA4E82C0069F088 /* RootWindowController.xib */; };
+		96E7A0F91DA4EC3E0069F088 /* KeyBindingsInserter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E7A0F81DA4EC3E0069F088 /* KeyBindingsInserter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +68,9 @@
 		9624F56B1DA43CBD005B57F4 /* SourceEditorCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceEditorCommand.swift; sourceTree = "<group>"; };
 		9624F56D1DA43CBD005B57F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		96BFA7D61DA4B9CE005B37E2 /* AddImportOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddImportOperation.swift; sourceTree = "<group>"; };
+		96E7A0F41DA4E82C0069F088 /* RootWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RootWindowController.swift; path = Windows/RootWindowController.swift; sourceTree = "<group>"; };
+		96E7A0F51DA4E82C0069F088 /* RootWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RootWindowController.xib; path = Windows/RootWindowController.xib; sourceTree = "<group>"; };
+		96E7A0F81DA4EC3E0069F088 /* KeyBindingsInserter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KeyBindingsInserter.swift; path = Controller/KeyBindingsInserter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +123,8 @@
 		9624F5421DA43C9B005B57F4 /* Import */ = {
 			isa = PBXGroup;
 			children = (
+				96E7A0FA1DA4EC420069F088 /* Controller */,
+				96E7A0F11DA4E7350069F088 /* Windows */,
 				9624F5431DA43C9B005B57F4 /* AppDelegate.swift */,
 				9624F5451DA43C9B005B57F4 /* Assets.xcassets */,
 				9624F5471DA43C9B005B57F4 /* MainMenu.xib */,
@@ -160,6 +168,23 @@
 				9624F5681DA43CBD005B57F4 /* ImportExtension.entitlements */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		96E7A0F11DA4E7350069F088 /* Windows */ = {
+			isa = PBXGroup;
+			children = (
+				96E7A0F41DA4E82C0069F088 /* RootWindowController.swift */,
+				96E7A0F51DA4E82C0069F088 /* RootWindowController.xib */,
+			);
+			name = Windows;
+			sourceTree = "<group>";
+		};
+		96E7A0FA1DA4EC420069F088 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				96E7A0F81DA4EC3E0069F088 /* KeyBindingsInserter.swift */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -272,6 +297,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96E7A0F71DA4E82C0069F088 /* RootWindowController.xib in Resources */,
 				9624F5461DA43C9B005B57F4 /* Assets.xcassets in Resources */,
 				9624F5491DA43C9B005B57F4 /* MainMenu.xib in Resources */,
 			);
@@ -299,6 +325,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				9624F5441DA43C9B005B57F4 /* AppDelegate.swift in Sources */,
+				96E7A0F91DA4EC3E0069F088 /* KeyBindingsInserter.swift in Sources */,
+				96E7A0F61DA4E82C0069F088 /* RootWindowController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

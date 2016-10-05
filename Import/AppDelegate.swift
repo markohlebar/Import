@@ -12,10 +12,12 @@ import Cocoa
 class AppDelegate: NSObject, NSApplicationDelegate {
 
     @IBOutlet weak var window: NSWindow!
-
+    lazy var rootWindowController: RootWindowController = RootWindowController(windowNibName: "RootWindowController")
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Insert code here to initialize your application
+
+        self.window = rootWindowController.window!
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
