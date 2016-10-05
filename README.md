@@ -3,7 +3,7 @@ Xcode extension for adding imports from anywhere in the code
 
 ![usage.gif](/Resources/usage.gif)
 
-### Installation Guide (Xcode 8 / macOS 10.12)
+### Installation Guide (Xcode 8 / OSX 10.11+)
 
 - close Xcode
 - (*OSX 10.11 only*) `sudo /usr/libexec/xpccachectl`
