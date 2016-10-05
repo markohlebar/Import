@@ -6,7 +6,6 @@
 //  Copyright © 2016 Marko Hlebar. All rights reserved.
 //
 
-import Cocoa
 import XcodeKit
 
 fileprivate struct AddImportOperationRegex {
@@ -77,7 +76,7 @@ class AddImportOperation {
         }
         
         guard lineNumber == NSNotFound else {
-            return lineNumber
+            return lineNumber + 1
         }
         
         //if a line is not found, find first free line after comments
