@@ -3,10 +3,12 @@
     <dependencies>
         <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11201"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="RootWindowController" customModule="Import" customModuleProvider="target">
             <connections>
+                <outlet property="imageView" destination="BB4-fA-TWF" id="vx5-47-S89"/>
                 <outlet property="window" destination="F0z-JX-Cv5" id="gIp-Ho-8D9"/>
             </connections>
         </customObject>
@@ -15,17 +17,17 @@
         <window title="Import ☝️" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" animationBehavior="default" id="F0z-JX-Cv5">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="196" y="240" width="186" height="200"/>
+            <rect key="contentRect" x="196" y="240" width="788" height="481"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1280" height="777"/>
-            <value key="minSize" type="size" width="186" height="200"/>
-            <value key="maxSize" type="size" width="186" height="200"/>
+            <value key="minSize" type="size" width="788" height="481"/>
+            <value key="maxSize" type="size" width="788" height="481"/>
             <view key="contentView" wantsLayer="YES" id="se5-gp-TjO">
-                <rect key="frame" x="0.0" y="0.0" width="186" height="200"/>
+                <rect key="frame" x="0.0" y="0.0" width="788" height="481"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="njt-eK-Vja">
-                        <rect key="frame" x="14" y="152" width="158" height="32"/>
-                        <buttonCell key="cell" type="push" title="Install Key Bindings" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Kv1-MY-XWu">
+                        <rect key="frame" x="14" y="433" width="760" height="32"/>
+                        <buttonCell key="cell" type="push" title="Install Key Bindings (⌘ + ctrl + P)" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Kv1-MY-XWu">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
                         </buttonCell>
@@ -33,18 +35,31 @@
                             <action selector="installKeyBindings:" target="-2" id="ZTv-Wo-QtE"/>
                         </connections>
                     </button>
+                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BB4-fA-TWF">
+                        <rect key="frame" x="0.0" y="0.0" width="788" height="420"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="BB4-fA-TWF" secondAttribute="height" multiplier="197:105" id="zUf-wf-HpB"/>
+                        </constraints>
+                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" animates="YES" imageScaling="proportionallyDown" image="usage" id="twk-Fe-Utd"/>
+                    </imageView>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="njt-eK-Vja" firstAttribute="leading" secondItem="se5-gp-TjO" secondAttribute="leading" constant="20" id="5Yu-em-OWs"/>
-                    <constraint firstItem="njt-eK-Vja" firstAttribute="top" secondItem="se5-gp-TjO" secondAttribute="top" constant="20" id="aYD-pv-vef"/>
-                    <constraint firstAttribute="trailing" secondItem="njt-eK-Vja" secondAttribute="trailing" constant="20" id="id9-Xi-Mci"/>
-                    <constraint firstAttribute="bottom" secondItem="njt-eK-Vja" secondAttribute="bottom" constant="159" id="rn5-5l-VQu"/>
+                    <constraint firstItem="njt-eK-Vja" firstAttribute="top" secondItem="se5-gp-TjO" secondAttribute="top" constant="20" id="1ya-YS-Eq3"/>
+                    <constraint firstItem="njt-eK-Vja" firstAttribute="leading" secondItem="se5-gp-TjO" secondAttribute="leading" constant="20" id="R4M-eu-nU4"/>
+                    <constraint firstAttribute="bottom" secondItem="BB4-fA-TWF" secondAttribute="bottom" id="StQ-IY-BCg"/>
+                    <constraint firstAttribute="trailing" secondItem="njt-eK-Vja" secondAttribute="trailing" constant="20" id="dNE-OY-6Jt"/>
+                    <constraint firstItem="BB4-fA-TWF" firstAttribute="top" secondItem="njt-eK-Vja" secondAttribute="bottom" constant="20" id="fFj-qw-nGh"/>
+                    <constraint firstAttribute="bottom" secondItem="BB4-fA-TWF" secondAttribute="bottom" id="lgx-we-suo"/>
+                    <constraint firstItem="BB4-fA-TWF" firstAttribute="centerX" secondItem="njt-eK-Vja" secondAttribute="centerX" id="pvT-et-dIb"/>
                 </constraints>
             </view>
             <connections>
                 <outlet property="delegate" destination="-2" id="0bl-1N-AYu"/>
             </connections>
-            <point key="canvasLocation" x="-74" y="116"/>
+            <point key="canvasLocation" x="-572" y="-37"/>
         </window>
     </objects>
+    <resources>
+        <image name="usage" width="788" height="420"/>
+    </resources>
 </document>
