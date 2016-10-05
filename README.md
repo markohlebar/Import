@@ -3,7 +3,7 @@ Xcode extension for adding imports from anywhere in the code
 
 ![usage.gif](/Resources/usage.gif)
 
-### Installation Guide
+### Installation Guide (Xcode 8 / macOS 10.12)
 
 - close Xcode
 - download the [Import app](https://github.com/markohlebar/Import/releases/download/1.0.0/Import.app.zip)
