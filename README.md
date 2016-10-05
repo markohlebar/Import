@@ -17,7 +17,7 @@ Xcode extension for adding imports from anywhere in the code
 
 ### Usage
 
-Import uses a Xcode's autocomplete, this works best when written inside a function / a method
+Import uses Xcode's autocomplete, this works best when written inside a function / a method
 
 - type: `import MODULE_NAME` (`#import "HEADER_NAME.h"` in Obj-C) as you normally would
 - press `⌘ + ctrl + P` or alternatively `Editor -> Import -> ☝️`
