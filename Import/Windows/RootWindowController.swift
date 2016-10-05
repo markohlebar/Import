@@ -7,12 +7,14 @@
 //
 
 import Cocoa
+import AVFoundation
+import AVKit
 
 class RootWindowController: NSWindowController {
     
     let path = "/Library/Developer/Xcode/UserData/KeyBindings/Default.idekeybindings"
     
-    @IBOutlet weak var imageView: NSImageView!
+    @IBOutlet weak var playerView: AVPlayerView!
     
     @IBAction func installKeyBindings(_ sender: AnyObject) {
         let inserter = KeyBindingsInserter(withPath: NSHomeDirectory() + path);
@@ -22,11 +24,25 @@ class RootWindowController: NSWindowController {
     override func windowDidLoad() {
         super.windowDidLoad()
         
-        let image = NSImage(named: "usage.gif")
-        imageView.imageScaling = .scaleNone
-        imageView.animates = true
-        imageView.image = image
-        imageView.canDrawSubviewsIntoLayer = true
-        imageView.superview?.wantsLayer = true
+        let url = Bundle.main.url(forResource: "usage", withExtension: "mov")!
+        let player = AVPlayer(url: url)
+        player.actionAtItemEnd = .none
+        player.play()
+        
+        playerView.player = player
+        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(loop(with:)),
+                                               name: Notification.Name.AVPlayerItemDidPlayToEndTime,
+                                               object: player.currentItem!)
+    }
+    
+    func loop(with notification: Notification) {
+        let item = notification.object as! AVPlayerItem
+        item.seek(to: kCMTimeZero)
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
 }

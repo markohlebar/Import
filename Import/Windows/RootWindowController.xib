@@ -2,13 +2,13 @@
 <document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
         <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.AVKitIBPlugin" version="11201"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11201"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="RootWindowController" customModule="Import" customModuleProvider="target">
             <connections>
-                <outlet property="imageView" destination="BB4-fA-TWF" id="vx5-47-S89"/>
+                <outlet property="playerView" destination="8ZN-wE-bYO" id="chz-hH-ot1"/>
                 <outlet property="window" destination="F0z-JX-Cv5" id="gIp-Ho-8D9"/>
             </connections>
         </customObject>
@@ -17,16 +17,16 @@
         <window title="Import ☝️" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" animationBehavior="default" id="F0z-JX-Cv5">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="196" y="240" width="788" height="481"/>
+            <rect key="contentRect" x="196" y="240" width="456" height="385"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1280" height="777"/>
-            <value key="minSize" type="size" width="788" height="481"/>
-            <value key="maxSize" type="size" width="788" height="481"/>
+            <value key="minSize" type="size" width="456" height="385"/>
+            <value key="maxSize" type="size" width="456" height="385"/>
             <view key="contentView" wantsLayer="YES" id="se5-gp-TjO">
-                <rect key="frame" x="0.0" y="0.0" width="788" height="481"/>
+                <rect key="frame" x="0.0" y="0.0" width="456" height="385"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="njt-eK-Vja">
-                        <rect key="frame" x="14" y="433" width="760" height="32"/>
+                        <rect key="frame" x="14" y="337" width="428" height="32"/>
                         <buttonCell key="cell" type="push" title="Install Key Bindings (⌘ + ctrl + P)" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Kv1-MY-XWu">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
@@ -35,31 +35,28 @@
                             <action selector="installKeyBindings:" target="-2" id="ZTv-Wo-QtE"/>
                         </connections>
                     </button>
-                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BB4-fA-TWF">
-                        <rect key="frame" x="0.0" y="0.0" width="788" height="420"/>
+                    <avPlayerView controlsStyle="none" translatesAutoresizingMaskIntoConstraints="NO" id="8ZN-wE-bYO">
+                        <rect key="frame" x="20" y="20" width="416" height="304"/>
                         <constraints>
-                            <constraint firstAttribute="width" secondItem="BB4-fA-TWF" secondAttribute="height" multiplier="197:105" id="zUf-wf-HpB"/>
+                            <constraint firstAttribute="width" constant="416" id="8TS-7d-Ywn"/>
+                            <constraint firstAttribute="height" constant="304" id="gei-zp-aMm"/>
                         </constraints>
-                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" animates="YES" imageScaling="proportionallyDown" image="usage" id="twk-Fe-Utd"/>
-                    </imageView>
+                    </avPlayerView>
                 </subviews>
                 <constraints>
                     <constraint firstItem="njt-eK-Vja" firstAttribute="top" secondItem="se5-gp-TjO" secondAttribute="top" constant="20" id="1ya-YS-Eq3"/>
+                    <constraint firstItem="8ZN-wE-bYO" firstAttribute="top" secondItem="njt-eK-Vja" secondAttribute="bottom" constant="20" id="CaU-gh-xru"/>
+                    <constraint firstAttribute="trailing" secondItem="8ZN-wE-bYO" secondAttribute="trailing" constant="20" id="Emr-WE-EcG"/>
                     <constraint firstItem="njt-eK-Vja" firstAttribute="leading" secondItem="se5-gp-TjO" secondAttribute="leading" constant="20" id="R4M-eu-nU4"/>
-                    <constraint firstAttribute="bottom" secondItem="BB4-fA-TWF" secondAttribute="bottom" id="StQ-IY-BCg"/>
                     <constraint firstAttribute="trailing" secondItem="njt-eK-Vja" secondAttribute="trailing" constant="20" id="dNE-OY-6Jt"/>
-                    <constraint firstItem="BB4-fA-TWF" firstAttribute="top" secondItem="njt-eK-Vja" secondAttribute="bottom" constant="20" id="fFj-qw-nGh"/>
-                    <constraint firstAttribute="bottom" secondItem="BB4-fA-TWF" secondAttribute="bottom" id="lgx-we-suo"/>
-                    <constraint firstItem="BB4-fA-TWF" firstAttribute="centerX" secondItem="njt-eK-Vja" secondAttribute="centerX" id="pvT-et-dIb"/>
+                    <constraint firstAttribute="bottom" secondItem="8ZN-wE-bYO" secondAttribute="bottom" constant="20" id="f5i-yk-gps"/>
+                    <constraint firstItem="8ZN-wE-bYO" firstAttribute="leading" secondItem="se5-gp-TjO" secondAttribute="leading" constant="20" id="mQA-gw-gXj"/>
                 </constraints>
             </view>
             <connections>
                 <outlet property="delegate" destination="-2" id="0bl-1N-AYu"/>
             </connections>
-            <point key="canvasLocation" x="-572" y="-37"/>
+            <point key="canvasLocation" x="-738" y="-85.5"/>
         </window>
     </objects>
-    <resources>
-        <image name="usage" width="788" height="420"/>
-    </resources>
 </document>
