@@ -15,8 +15,7 @@ class SourceEditorCommand: NSObject, XCSourceEditorCommand {
         
         let operation = AddImportOperation(with: invocation.buffer)
         operation.execute()
-        
+                
         completionHandler(nil)
     }
 }
-
