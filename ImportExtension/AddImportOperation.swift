@@ -6,13 +6,14 @@
 //  Copyright © 2016 Marko Hlebar. All rights reserved.
 //
 
+import Cocoa
 import XcodeKit
 
 fileprivate struct AddImportOperationRegex {
     
     static let objcImport = ".*#.*(import|include).*[\",<].*[\",>]"
     static let objcModuleImport = ".*@.*(import).*.;"
-    static let swiftModuleImport = ".*(import).*."
+    static let swiftModuleImport = ".*(import) +.*."
 }
 
 class AddImportOperation {
