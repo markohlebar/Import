@@ -54,7 +54,8 @@ class KeyBindingsInserter {
         //check if there is already a plist entry and replace it.
         if bindingPosition != NSNotFound {
             if isBindingSet(in: bindings[bindingPosition] as! NSDictionary) {
-                present(message: "Binding is already set.\nImport is ready to be used in Xcode.")
+                present(message: "Binding is already set.\nImport is ready to be used in Xcode.", style: .informational)
+                return;
             }
             else {
                 bindings.removeObject(at: bindingPosition)
@@ -66,6 +67,7 @@ class KeyBindingsInserter {
         }
         
         existingPlist.write(toFile: path, atomically: true);
+        present(message: "Binding ⌘ + ctrl + P is now set in Xcode.", style: .informational)
     }
     
     private func position(in bindings:NSMutableArray) -> Int {
@@ -89,27 +91,23 @@ class KeyBindingsInserter {
     private func installVanillaPlist() {
         do {
             try FileManager.default.copyItem(atPath: vanillaPlistPath, toPath: path)
+            present(message: "Binding ⌘ + ctrl + P is now set in Xcode.", style: .informational)
         }
         catch let error as NSError {
             present(error: error)
         }
     }
     
-    private func present(message: String) {
-        let myPopup = NSAlert()
-        myPopup.messageText = "👍"
-        myPopup.informativeText = message
-        myPopup.alertStyle = .informational
-        myPopup.addButton(withTitle: "OK")
-        myPopup.runModal()
+    private func present(message: String, style: NSAlertStyle) {
+        let alert = NSAlert()
+        alert.messageText = (style == .informational) ? "👍" : "🤕"
+        alert.informativeText = message
+        alert.alertStyle = style
+        alert.addButton(withTitle: "OK")
+        alert.runModal()
     }
     
     private func present(error: NSError) {
-        let myPopup = NSAlert()
-        myPopup.messageText = "Something went wrong 🤕"
-        myPopup.informativeText = error.localizedDescription
-        myPopup.alertStyle = .critical
-        myPopup.addButton(withTitle: "OK")
-        myPopup.runModal()
+        present(message: error.localizedDescription, style:.critical)
     }
 }
