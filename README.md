@@ -3,6 +3,10 @@ Xcode extension for adding imports from anywhere in the code
 
 ![usage.gif](/Resources/usage.gif)
 
+### Why? 
+Because sometimes you are on 300th line of code and scrolling up just to add an import is a waste of time. 
+This was built to replace [Peckham](https://github.com/markohlebar/Peckham), as  decided to drop support for Xcode plugins in Xcode 8. 
+
 ### Installation Guide (Xcode 8 / OSX 10.11+)
 
 - close Xcode
