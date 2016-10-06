@@ -11,6 +11,7 @@ Xcode extension for adding imports from anywhere in the code
 - unzip and copy to Applications folder
 - run (right click + open)
 - (*optional*) click on **Install Key Bindings** to install `⌘ + ctrl + P` binding
+- ` -> System Preferences... -> Extensions -> All -> Enable Import`
 - open Xcode
 - select a source file
 - check if `Editor -> Import -> ☝️` is there 
