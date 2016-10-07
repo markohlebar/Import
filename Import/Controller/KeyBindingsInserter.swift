@@ -24,6 +24,13 @@ fileprivate enum KeyBindings {
     }
 }
 
+fileprivate enum Messages {
+
+    static let BindingAlreadySet = "Binding is already set.\nImport is ready to be used in Xcode."
+    static let BindingIsSet = "Binding ⌘ + ctrl + P is now set in Xcode."
+    static let CouldNotInstall = "Sorry, could not install the key bindings at this time.\nTry  -> System Preferences... -> Extensions -> All -> Enable Import,\nand try again."
+}
+
 class KeyBindingsInserter {
     
     let path: String
@@ -43,35 +50,57 @@ class KeyBindingsInserter {
     }
     
     private func insertVanillaPlist() {
-        let existingPlist = NSMutableDictionary(contentsOfFile: path)!
-        let vanillaPlist = NSDictionary(contentsOfFile: vanillaPlistPath)!
+        guard let existingPlist = NSMutableDictionary(contentsOfFile: path) else {
+            present(message: Messages.CouldNotInstall, style: .critical)
+            return
+        }
+
+        guard let vanillaPlist = NSDictionary(contentsOfFile: vanillaPlistPath) else {
+            return
+        }
         
-        let bindings = ((existingPlist[KeyBindings.Key.MenuKeyBindings] as! NSDictionary)[KeyBindings.Key.KeyBindings] as! NSMutableArray)
-        let bindingPosition = position(in: bindings)
-        
-        let vanillaBinding = ((vanillaPlist[KeyBindings.Key.MenuKeyBindings] as! NSDictionary)[KeyBindings.Key.KeyBindings] as! NSMutableArray).firstObject as! NSDictionary
-        
-        //check if there is already a plist entry and replace it.
-        if bindingPosition != NSNotFound {
-            if isBindingSet(in: bindings[bindingPosition] as! NSDictionary) {
-                present(message: "Binding is already set.\nImport is ready to be used in Xcode.", style: .informational)
-                return;
+        if let bindings = extractBindings(from: existingPlist) {
+            let bindingPosition = position(in: bindings)
+            let vanillaBindings = extractBindings(from: vanillaPlist)
+            let vanillaBinding = vanillaBindings!.firstObject as! NSDictionary
+
+            //check if there is already a plist entry and replace it.
+            if bindingPosition != NSNotFound {
+                if let binding = bindings[bindingPosition] as? NSDictionary,
+                    isBindingSet(in: binding) {
+                    present(message: Messages.BindingAlreadySet, style: .informational)
+                    return;
+                }
+                else {
+                    bindings.removeObject(at: bindingPosition)
+                    bindings.insert(vanillaBinding, at: bindingPosition)
+                }
             }
             else {
-                bindings.removeObject(at: bindingPosition)
-                bindings.insert(vanillaBinding, at: bindingPosition)
+                bindings.insert(vanillaBinding, at: 0)
             }
+
+            existingPlist.write(toFile: path, atomically: true);
+            present(message: Messages.BindingIsSet, style: .informational)
         }
         else {
-            bindings.insert(vanillaBinding, at: 0)
+            present(message: Messages.CouldNotInstall, style: .critical)
         }
-        
-        existingPlist.write(toFile: path, atomically: true);
-        present(message: "Binding ⌘ + ctrl + P is now set in Xcode.", style: .informational)
+    }
+
+    private func extractBindings(from plist: NSDictionary) -> NSMutableArray? {
+        if let menuKeyBindings = plist[KeyBindings.Key.MenuKeyBindings] as? NSDictionary,
+            let keyBindings = menuKeyBindings[KeyBindings.Key.KeyBindings] as? NSMutableArray {
+                return keyBindings
+        }
+        return nil
     }
     
     private func position(in bindings:NSMutableArray) -> Int {
-        let binds = bindings as! [NSDictionary]
+        guard let binds = bindings as? [NSDictionary] else {
+            return NSNotFound
+        }
+
         for (index, binding) in binds.enumerated() {
             if binding[KeyBindings.Key.CommandID] as? String == KeyBindings.Value.CommandID {
                 return index
@@ -91,7 +120,7 @@ class KeyBindingsInserter {
     private func installVanillaPlist() {
         do {
             try FileManager.default.copyItem(atPath: vanillaPlistPath, toPath: path)
-            present(message: "Binding ⌘ + ctrl + P is now set in Xcode.", style: .informational)
+            present(message: Messages.BindingIsSet, style: .informational)
         }
         catch let error as NSError {
             present(error: error)
