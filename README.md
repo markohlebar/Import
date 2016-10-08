@@ -28,6 +28,12 @@ Import uses Xcode's autocomplete, this works best when written inside a function
 - type: `import MODULE_NAME` (`#import "HEADER_NAME.h"` in Obj-C) as you normally would
 - press `⌘ + ctrl + P` or alternatively `Editor -> Import -> ☝️`
 
+### Supported languages
+- Swift
+- Objective-C
+- C++
+- C
+
 ### License
 
 MIT, see LICENSE
