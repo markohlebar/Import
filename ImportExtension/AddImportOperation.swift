@@ -39,6 +39,10 @@ class AddImportOperation {
         guard line != NSNotFound else {
             return
         }
+
+        guard self.buffer.canIncludeImportString(importString, atLine: line) else {
+            return
+        }
         
         self.buffer.lines.removeObject(at: selectionLine)
         self.buffer.lines.insert(importString, at: line)
@@ -99,6 +103,19 @@ fileprivate extension XCSourceTextBuffer {
     
     var isSwiftSource: Bool {
         return self.contentUTI == "public.swift-source"
+    }
+
+    /// Checks if the import string isn't already contained in the import list
+    ///
+    /// - Parameters:
+    ///   - importString: The import statement to include
+    ///   - atLine: The line where the import should be done. This is to check from lines 0 to atLine
+    /// - Returns: true if the statement isn't already included, false if it is
+    func canIncludeImportString(_ importString: String, atLine: Int) -> Bool {
+        
+        let importBufferArray = self.lines.subarray(with: NSMakeRange(0, atLine)) as NSArray as! [String]
+        
+        return importBufferArray.contains(importString) == false
     }
 }
 
