@@ -147,14 +147,7 @@ fileprivate extension XCSourceTextBuffer {
         
         var sanitizedImportString: String = importString
 
-//        if let position = importString.characters.index(of: "/") {
-//            
-//            sanitizedImportString.removeSubrange(position..<importString.endIndex)
-//        }
-        
         if let range = importString.range(of: "//"), !range.isEmpty {
-            
-//            sanitizedImportString = importString.replacingCharacters(in: range, with: "")
             
             sanitizedImportString = importString.substring(to: range.lowerBound)
         }
