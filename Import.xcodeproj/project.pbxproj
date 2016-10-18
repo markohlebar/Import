@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		961F64421DB67A6F00F7E05A /* open_system_preferences.scpt in Resources */ = {isa = PBXBuildFile; fileRef = 961F64411DB67A6F00F7E05A /* open_system_preferences.scpt */; };
 		9624F5441DA43C9B005B57F4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9624F5431DA43C9B005B57F4 /* AppDelegate.swift */; };
 		9624F5461DA43C9B005B57F4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9624F5451DA43C9B005B57F4 /* Assets.xcassets */; };
 		9624F5491DA43C9B005B57F4 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9624F5471DA43C9B005B57F4 /* MainMenu.xib */; };
@@ -55,6 +56,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		961F64411DB67A6F00F7E05A /* open_system_preferences.scpt */ = {isa = PBXFileReference; lastKnownFileType = file; path = open_system_preferences.scpt; sourceTree = "<group>"; };
 		9624F5401DA43C9B005B57F4 /* Import.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Import.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9624F5431DA43C9B005B57F4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9624F5451DA43C9B005B57F4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -178,6 +180,7 @@
 		965BF2701DA4F3DF00A43900 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				961F64411DB67A6F00F7E05A /* open_system_preferences.scpt */,
 				96514D1A1DA532CC0061F17B /* usage.mov */,
 				965BF2711DA4F3DF00A43900 /* Default.idekeybindings */,
 			);
@@ -312,6 +315,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				96514D1B1DA532CC0061F17B /* usage.mov in Resources */,
+				961F64421DB67A6F00F7E05A /* open_system_preferences.scpt in Resources */,
 				96E7A0F71DA4E82C0069F088 /* RootWindowController.xib in Resources */,
 				9624F5461DA43C9B005B57F4 /* Assets.xcassets in Resources */,
 				965BF2721DA4F3DF00A43900 /* Default.idekeybindings in Resources */,

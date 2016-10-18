@@ -21,6 +21,12 @@ class RootWindowController: NSWindowController {
         inserter.insertBindings()
     }
     
+    @IBAction func openSystemPreferences(_ sender: AnyObject) {
+        let url = Bundle.main.url(forResource: "open_system_preferences", withExtension: "scpt")!
+        let script = NSAppleScript(contentsOf: url, error: nil)
+        script?.executeAndReturnError(nil)
+    }
+    
     override func windowDidLoad() {
         super.windowDidLoad()
         

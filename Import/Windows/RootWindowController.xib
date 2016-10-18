@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="11201" systemVersion="16B2548a" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
         <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.AVKitIBPlugin" version="11201"/>
@@ -17,22 +17,32 @@
         <window title="Import ☝️" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" animationBehavior="default" id="F0z-JX-Cv5">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="196" y="240" width="456" height="385"/>
+            <rect key="contentRect" x="196" y="240" width="456" height="418"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1280" height="777"/>
-            <value key="minSize" type="size" width="456" height="385"/>
-            <value key="maxSize" type="size" width="456" height="385"/>
+            <value key="minSize" type="size" width="456" height="418"/>
+            <value key="maxSize" type="size" width="456" height="418"/>
             <view key="contentView" wantsLayer="YES" id="se5-gp-TjO">
-                <rect key="frame" x="0.0" y="0.0" width="456" height="385"/>
-                <autoresizingMask key="autoresizingMask"/>
+                <rect key="frame" x="0.0" y="0.0" width="456" height="418"/>
+                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 <subviews>
-                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="njt-eK-Vja">
-                        <rect key="frame" x="14" y="337" width="428" height="32"/>
-                        <buttonCell key="cell" type="push" title="Install Key Bindings (⌘ + ctrl + P)" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Kv1-MY-XWu">
+                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="njt-eK-Vja" userLabel="Open System Preferences">
+                        <rect key="frame" x="14" y="370" width="428" height="32"/>
+                        <buttonCell key="cell" type="push" title="Open System Preferences..." bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Kv1-MY-XWu">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
                         </buttonCell>
                         <connections>
-                            <action selector="installKeyBindings:" target="-2" id="ZTv-Wo-QtE"/>
+                            <action selector="openSystemPreferences:" target="-2" id="OKb-T0-rzV"/>
+                        </connections>
+                    </button>
+                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="VOL-kt-VV6" userLabel="Install Key Bindings">
+                        <rect key="frame" x="14" y="337" width="428" height="32"/>
+                        <buttonCell key="cell" type="push" title="Install Key Bindings (⌘ + ctrl + P)" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="wn8-lI-Bpu">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="installKeyBindings:" target="-2" id="KTN-gj-mhJ"/>
                         </connections>
                     </button>
                     <avPlayerView controlsStyle="none" translatesAutoresizingMaskIntoConstraints="NO" id="8ZN-wE-bYO">
@@ -44,9 +54,12 @@
                     </avPlayerView>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="VOL-kt-VV6" firstAttribute="leading" secondItem="se5-gp-TjO" secondAttribute="leading" constant="20" id="1ak-9G-DyU"/>
                     <constraint firstItem="njt-eK-Vja" firstAttribute="top" secondItem="se5-gp-TjO" secondAttribute="top" constant="20" id="1ya-YS-Eq3"/>
-                    <constraint firstItem="8ZN-wE-bYO" firstAttribute="top" secondItem="njt-eK-Vja" secondAttribute="bottom" constant="20" id="CaU-gh-xru"/>
+                    <constraint firstItem="8ZN-wE-bYO" firstAttribute="top" secondItem="VOL-kt-VV6" secondAttribute="bottom" constant="20" id="Cd4-jC-FQp"/>
                     <constraint firstAttribute="trailing" secondItem="8ZN-wE-bYO" secondAttribute="trailing" constant="20" id="Emr-WE-EcG"/>
+                    <constraint firstItem="VOL-kt-VV6" firstAttribute="top" secondItem="njt-eK-Vja" secondAttribute="bottom" constant="12" id="K56-Ap-qde"/>
+                    <constraint firstAttribute="trailing" secondItem="VOL-kt-VV6" secondAttribute="trailing" constant="20" id="MhM-sz-pPZ"/>
                     <constraint firstItem="njt-eK-Vja" firstAttribute="leading" secondItem="se5-gp-TjO" secondAttribute="leading" constant="20" id="R4M-eu-nU4"/>
                     <constraint firstAttribute="trailing" secondItem="njt-eK-Vja" secondAttribute="trailing" constant="20" id="dNE-OY-6Jt"/>
                     <constraint firstAttribute="bottom" secondItem="8ZN-wE-bYO" secondAttribute="bottom" constant="20" id="f5i-yk-gps"/>
@@ -56,7 +69,7 @@
             <connections>
                 <outlet property="delegate" destination="-2" id="0bl-1N-AYu"/>
             </connections>
-            <point key="canvasLocation" x="-738" y="-85.5"/>
+            <point key="canvasLocation" x="-1096" y="-102"/>
         </window>
     </objects>
 </document>
