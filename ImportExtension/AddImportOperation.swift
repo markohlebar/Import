@@ -7,21 +7,26 @@
 //
 
 import XcodeKit
+import AppKit
 
-fileprivate struct AddImportOperationRegex {
+fileprivate struct AddImportOperationConstants {
     
+    /// Import matchers
     static let objcImport = ".*#.*(import|include).*[\",<].*[\",>]"
     static let objcModuleImport = ".*@.*(import).*.;"
     static let swiftModuleImport = ".*(import) +.*."
+    
+    /// Warning strings
+    static let doubleImportWarningString = " // 🚨 This import has already been included 🚨"
 }
 
 class AddImportOperation {
 
     let buffer: XCSourceTextBuffer
     
-    lazy var importRegex = try! NSRegularExpression(pattern: AddImportOperationRegex.objcImport, options: NSRegularExpression.Options(rawValue: UInt(0)))
-    lazy var moduleImportRegex = try! NSRegularExpression(pattern: AddImportOperationRegex.objcModuleImport, options: NSRegularExpression.Options(rawValue: UInt(0)))
-    lazy var swiftModuleImportRegex = try! NSRegularExpression(pattern: AddImportOperationRegex.swiftModuleImport, options: NSRegularExpression.Options(rawValue: UInt(0)))
+    lazy var importRegex = try! NSRegularExpression(pattern: AddImportOperationConstants.objcImport, options: NSRegularExpression.Options(rawValue: UInt(0)))
+    lazy var moduleImportRegex = try! NSRegularExpression(pattern: AddImportOperationConstants.objcModuleImport, options: NSRegularExpression.Options(rawValue: UInt(0)))
+    lazy var swiftModuleImportRegex = try! NSRegularExpression(pattern: AddImportOperationConstants.swiftModuleImport, options: NSRegularExpression.Options(rawValue: UInt(0)))
 
     init(with buffer:XCSourceTextBuffer) {
         self.buffer = buffer
