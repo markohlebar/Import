@@ -7,27 +7,21 @@
 //
 
 import XcodeKit
-import AppKit
 
-fileprivate struct AddImportOperationConstants {
+fileprivate struct AddImportOperationRegex {
     
-    /// Import matchers
     static let objcImport = ".*#.*(import|include).*[\",<].*[\",>]"
     static let objcModuleImport = ".*@.*(import).*.;"
     static let swiftModuleImport = ".*(import) +.*."
-    
-    /// Warning strings
-    static let doubleImportWarningString = " // 🚨 This import has already been included 🚨"
-    static let doubleImportRemoveInstructionsString = "// ☝️ again to remove duplicate"
 }
 
 class AddImportOperation {
 
     let buffer: XCSourceTextBuffer
     
-    lazy var importRegex = try! NSRegularExpression(pattern: AddImportOperationConstants.objcImport, options: NSRegularExpression.Options(rawValue: UInt(0)))
-    lazy var moduleImportRegex = try! NSRegularExpression(pattern: AddImportOperationConstants.objcModuleImport, options: NSRegularExpression.Options(rawValue: UInt(0)))
-    lazy var swiftModuleImportRegex = try! NSRegularExpression(pattern: AddImportOperationConstants.swiftModuleImport, options: NSRegularExpression.Options(rawValue: UInt(0)))
+    lazy var importRegex = try! NSRegularExpression(pattern: AddImportOperationRegex.objcImport, options: NSRegularExpression.Options(rawValue: UInt(0)))
+    lazy var moduleImportRegex = try! NSRegularExpression(pattern: AddImportOperationRegex.objcModuleImport, options: NSRegularExpression.Options(rawValue: UInt(0)))
+    lazy var swiftModuleImportRegex = try! NSRegularExpression(pattern: AddImportOperationRegex.swiftModuleImport, options: NSRegularExpression.Options(rawValue: UInt(0)))
 
     init(with buffer:XCSourceTextBuffer) {
         self.buffer = buffer
@@ -47,30 +41,6 @@ class AddImportOperation {
         }
 
         guard self.buffer.canIncludeImportString(importString, atLine: line) else {
-
-            if let potentialRemovalInstructionsString = self.buffer.lines[selectionLine + 1] as? String {
-                
-                if (potentialRemovalInstructionsString.trimmingCharacters(in: CharacterSet.newlines) == AddImportOperationConstants.doubleImportRemoveInstructionsString)
-                {
-                    self.buffer.lines.removeObjects(in: NSMakeRange(selectionLine, 2))
-                    
-                    return
-                }
-                
-            }
-            
-            NSBeep()
-            
-            let importStatementString = self.buffer.lines[selectionLine] as! String
-            
-            let commentedString = importStatementString.trimmingCharacters(in: CharacterSet.newlines).appending(AddImportOperationConstants.doubleImportWarningString)
-            
-            self.buffer.lines[selectionLine] = commentedString
-
-            self.buffer.lines.insert(AddImportOperationConstants.doubleImportRemoveInstructionsString, at: selectionLine + 1)
-
-            
-            
             return
         }
         
@@ -145,27 +115,7 @@ fileprivate extension XCSourceTextBuffer {
         
         let importBufferArray = self.lines.subarray(with: NSMakeRange(0, atLine)) as NSArray as! [String]
         
-        var sanitizedImportString: String = importString
-
-//        if let position = importString.characters.index(of: "/") {
-//            
-//            sanitizedImportString.removeSubrange(position..<importString.endIndex)
-//        }
-        
-        if let range = importString.range(of: "//"), !range.isEmpty {
-            
-//            sanitizedImportString = importString.replacingCharacters(in: range, with: "")
-            
-            sanitizedImportString = importString.substring(to: range.lowerBound)
-        }
-        
-        sanitizedImportString = sanitizedImportString.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
-        
-        if let range = importString.rangeOfCharacter(from: CharacterSet.newlines), !range.isEmpty {
-            sanitizedImportString.append("\n")
-        }
-        
-        return importBufferArray.contains(sanitizedImportString) == false
+        return importBufferArray.contains(importString) == false
     }
 }
 
