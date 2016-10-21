@@ -17,7 +17,7 @@ fileprivate struct AddImportOperationConstants {
     static let swiftModuleImport = ".*(import) +.*."
     
     /// Warning strings
-    static let doubleImportWarningString = " // 🚨 This import has already been included 🚨"
+    static let doubleImportWarningString = "🚨 This import has already been included 🚨"
 }
 
 class AddImportOperation {
