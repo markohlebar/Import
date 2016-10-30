@@ -16,20 +16,31 @@ fileprivate struct AddImportOperationConstants {
     static let objcModuleImport = ".*@.*(import).*.;"
     static let swiftModuleImport = ".*(import) +.*."
     
-    /// Warning strings
-    static let doubleImportWarningString = "🚨 This import has already been included 🚨"
+    /// Double import strings
+    /// Note: For the `doubleImportWarningString` string, we're using a non-breaking space (\u00A0), not a normal space
+    static let doubleImportWarningString = "🚨 This import has already been included 🚨"
+    
+    static let removeImportButtonString = "Remove Import"
+    
+    static let cancelRemoveImportButtonString = "Cancel"
 }
 
 class AddImportOperation {
 
     let buffer: XCSourceTextBuffer
     
+    let completionHandler: (Error?) -> Void
+    
     lazy var importRegex = try! NSRegularExpression(pattern: AddImportOperationConstants.objcImport, options: NSRegularExpression.Options(rawValue: UInt(0)))
     lazy var moduleImportRegex = try! NSRegularExpression(pattern: AddImportOperationConstants.objcModuleImport, options: NSRegularExpression.Options(rawValue: UInt(0)))
     lazy var swiftModuleImportRegex = try! NSRegularExpression(pattern: AddImportOperationConstants.swiftModuleImport, options: NSRegularExpression.Options(rawValue: UInt(0)))
 
-    init(with buffer:XCSourceTextBuffer) {
+    var lineToRemove: Int = NSNotFound
+    
+    init(with buffer:XCSourceTextBuffer, completionHandler: @escaping (Error?) -> Void) {
         self.buffer = buffer
+        
+        self.completionHandler = completionHandler
     }
     
     func execute() {
@@ -38,19 +49,60 @@ class AddImportOperation {
         let importString = (self.buffer.lines[selectionLine] as! String).trimmingCharacters(in: CharacterSet.whitespaces)
         
         guard isValid(importString: importString) else {
+            self.completionHandler(nil)
             return
         }
         let line = appropriateLine(ignoringLine: selectionLine)
         guard line != NSNotFound else {
+            self.completionHandler(nil)
             return
         }
-
+        
         guard self.buffer.canIncludeImportString(importString, atLine: line) else {
+            
+            // we need to run this on the main thread since we're getting called on a seconday thread
+            
+            OperationQueue.main.addOperation({
+                
+                self.lineToRemove = selectionLine
+                
+                let doubleImportAlert = NSAlert()
+                
+                let importAppIcon = #imageLiteral(resourceName: "ImportIcon");
+
+                doubleImportAlert.icon = importAppIcon
+                
+                doubleImportAlert.messageText = AddImportOperationConstants.doubleImportWarningString
+
+                doubleImportAlert.addButton(withTitle: AddImportOperationConstants.removeImportButtonString)
+                
+                doubleImportAlert.addButton(withTitle: AddImportOperationConstants.cancelRemoveImportButtonString)
+                
+                // We're creating a "fake" view so that the text doesn't wrap on two lines
+                let fakeRect: NSRect = NSRect.init(x: 0, y: 0, width: 307, height: 0)
+                
+                let fakeView = NSView.init(frame: fakeRect)
+                
+                doubleImportAlert.accessoryView = fakeView
+                
+                NSBeep()
+
+                let response = doubleImportAlert.runModal()
+                
+                if (response == NSAlertFirstButtonReturn) {
+                    self.buffer.lines.removeObject(at: self.lineToRemove)
+                }
+                
+                self.completionHandler(nil)
+            })
+            
             return
         }
         
         self.buffer.lines.removeObject(at: selectionLine)
         self.buffer.lines.insert(importString, at: line)
+        
+        self.completionHandler(nil)
     }
     
     func isValid(importString: String) -> Bool {
