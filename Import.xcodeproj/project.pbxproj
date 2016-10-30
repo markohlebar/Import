@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		598C8D921DC628F600DD01BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 598C8D911DC628F600DD01BC /* Assets.xcassets */; };
 		9624F5441DA43C9B005B57F4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9624F5431DA43C9B005B57F4 /* AppDelegate.swift */; };
 		9624F5461DA43C9B005B57F4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9624F5451DA43C9B005B57F4 /* Assets.xcassets */; };
 		9624F5491DA43C9B005B57F4 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9624F5471DA43C9B005B57F4 /* MainMenu.xib */; };
@@ -55,6 +56,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		598C8D911DC628F600DD01BC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9624F5401DA43C9B005B57F4 /* Import.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Import.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9624F5431DA43C9B005B57F4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9624F5451DA43C9B005B57F4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -163,6 +165,7 @@
 				96BFA7D61DA4B9CE005B37E2 /* AddImportOperation.swift */,
 				9624F56D1DA43CBD005B57F4 /* Info.plist */,
 				9624F5671DA43CBD005B57F4 /* Supporting Files */,
+				598C8D911DC628F600DD01BC /* Assets.xcassets */,
 			);
 			path = ImportExtension;
 			sourceTree = "<group>";
@@ -330,6 +333,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				598C8D921DC628F600DD01BC /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
