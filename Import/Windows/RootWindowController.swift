@@ -10,21 +10,33 @@ import Cocoa
 import AVFoundation
 import AVKit
 
+fileprivate enum Resources {
+    static let keyBindingsPath = "/Library/Developer/Xcode/UserData/KeyBindings/Default.idekeybindings"
+    static let systemPrefsScript = (name: "open_system_preferences", extension:"scpt")
+    static let usageMovie = (name: "usage", extension: "mov")
+}
+
 class RootWindowController: NSWindowController {
-    
-    let path = "/Library/Developer/Xcode/UserData/KeyBindings/Default.idekeybindings"
-    
+
     @IBOutlet weak var playerView: AVPlayerView!
     
     @IBAction func installKeyBindings(_ sender: AnyObject) {
-        let inserter = KeyBindingsInserter(withPath: NSHomeDirectory() + path);
+        let inserter = KeyBindingsInserter(withPath: NSHomeDirectory() + Resources.keyBindingsPath);
         inserter.insertBindings()
+    }
+    
+    @IBAction func openSystemPreferences(_ sender: AnyObject) {
+        let file = Resources.systemPrefsScript
+        let url = Bundle.main.url(forResource: file.name, withExtension: file.extension)!
+        let script = NSAppleScript(contentsOf: url, error: nil)
+        script?.executeAndReturnError(nil)
     }
     
     override func windowDidLoad() {
         super.windowDidLoad()
-        
-        let url = Bundle.main.url(forResource: "usage", withExtension: "mov")!
+
+        let file = Resources.usageMovie
+        let url = Bundle.main.url(forResource: file.name, withExtension: file.extension)!
         let player = AVPlayer(url: url)
         player.actionAtItemEnd = .none
         player.play()

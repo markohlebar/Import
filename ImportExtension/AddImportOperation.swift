@@ -102,6 +102,10 @@ class AddImportOperation {
         self.buffer.lines.removeObject(at: selectionLine)
         self.buffer.lines.insert(importString, at: line)
         
+        //add a new selection. Bug fix for #7
+        let selectionPosition = XCSourceTextRange.init(start: XCSourceTextPosition.init(line: 0, column: 0), end: XCSourceTextPosition.init(line: 0, column: 0))
+        self.buffer.selections.removeAllObjects()
+        self.buffer.selections.insert(selectionPosition, at: 0)
         self.completionHandler(nil)
     }
     
