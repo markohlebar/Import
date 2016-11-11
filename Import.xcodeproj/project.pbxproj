@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		591C66171DC6477200FD0FCD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 591C66161DC6477200FD0FCD /* Assets.xcassets */; };
 		961F64421DB67A6F00F7E05A /* open_system_preferences.scpt in Resources */ = {isa = PBXBuildFile; fileRef = 961F64411DB67A6F00F7E05A /* open_system_preferences.scpt */; };
 		9624F5441DA43C9B005B57F4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9624F5431DA43C9B005B57F4 /* AppDelegate.swift */; };
 		9624F5461DA43C9B005B57F4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9624F5451DA43C9B005B57F4 /* Assets.xcassets */; };
@@ -56,7 +57,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		961F64411DB67A6F00F7E05A /* open_system_preferences.scpt */ = {isa = PBXFileReference; lastKnownFileType = file; path = open_system_preferences.scpt; sourceTree = "<group>"; };
+		591C66161DC6477200FD0FCD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		961F64411DB67A6F00F7E05A /* open_system_preferences.scpt */ = {isa = PBXFileReference; lastKnownFileType = text; path = open_system_preferences.scpt; sourceTree = "<group>"; };
 		9624F5401DA43C9B005B57F4 /* Import.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Import.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9624F5431DA43C9B005B57F4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9624F5451DA43C9B005B57F4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -172,6 +174,7 @@
 		9624F5671DA43CBD005B57F4 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				591C66161DC6477200FD0FCD /* Assets.xcassets */,
 				9624F5681DA43CBD005B57F4 /* ImportExtension.entitlements */,
 			);
 			name = "Supporting Files";
@@ -334,6 +337,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				591C66171DC6477200FD0FCD /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -13,9 +13,8 @@ class SourceEditorCommand: NSObject, XCSourceEditorCommand {
     
     func perform(with invocation: XCSourceEditorCommandInvocation, completionHandler: @escaping (Error?) -> Void ) -> Void {
         
-        let operation = AddImportOperation(with: invocation.buffer)
+        let operation = AddImportOperation(with: invocation.buffer, completionHandler: completionHandler)
+        
         operation.execute()
-                
-        completionHandler(nil)
     }
 }
