@@ -20,9 +20,7 @@ fileprivate struct AddImportOperationConstants {
     /// Note: For the `doubleImportWarningString` string, we're using a non-breaking space (\u00A0), not a normal space
     static let doubleImportWarningString = "🚨 This import has already been included 🚨"
     
-    static let removeImportButtonString = "Remove Import"
-    
-    static let cancelRemoveImportButtonString = "Cancel"
+    static let cancelRemoveImportButtonString = "Okay"
 }
 
 class AddImportOperation {
@@ -74,8 +72,6 @@ class AddImportOperation {
                 
                 doubleImportAlert.messageText = AddImportOperationConstants.doubleImportWarningString
 
-                doubleImportAlert.addButton(withTitle: AddImportOperationConstants.removeImportButtonString)
-                
                 doubleImportAlert.addButton(withTitle: AddImportOperationConstants.cancelRemoveImportButtonString)
                 
                 // We're creating a "fake" view so that the text doesn't wrap on two lines
