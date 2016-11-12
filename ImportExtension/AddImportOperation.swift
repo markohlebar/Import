@@ -83,6 +83,14 @@ class AddImportOperation {
                 
                 NSBeep()
 
+                let frontmostApplication = NSWorkspace.shared().frontmostApplication
+                
+                let appWindow = doubleImportAlert.window
+                
+                appWindow.makeKeyAndOrderFront(appWindow)
+                
+                NSApp.activate(ignoringOtherApps: true)
+                
                 let response = doubleImportAlert.runModal()
                 
                 if (response == NSAlertFirstButtonReturn) {
@@ -96,6 +104,10 @@ class AddImportOperation {
                     self.buffer.lines.removeObject(at: self.lineToRemove)
                 }
                 
+                NSApp.deactivate()
+                
+                frontmostApplication?.activate(options: NSApplicationActivationOptions(rawValue: 0))
+
                 self.completionHandler(nil)
             })
             
