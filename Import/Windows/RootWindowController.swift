@@ -58,3 +58,11 @@ class RootWindowController: NSWindowController {
         NotificationCenter.default.removeObserver(self)
     }
 }
+
+extension String {
+    
+    public func appending(pathComponent: String) -> String {
+        return (self as NSString).appendingPathComponent(pathComponent)
+    }
+    
+}
