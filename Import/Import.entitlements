@@ -6,5 +6,9 @@
 	<true/>
 	<key>com.apple.security.temporary-exception.apple-events</key>
 	<string>com.apple.systempreferences</string>
+	<key>com.apple.security.temporary-exception.files.home-relative-path.read-write</key>
+	<array>
+		<string>/Library/Developer/Xcode/UserData/KeyBindings/</string>
+	</array>
 </dict>
 </plist>
