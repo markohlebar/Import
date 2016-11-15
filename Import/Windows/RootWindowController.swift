@@ -21,7 +21,14 @@ class RootWindowController: NSWindowController {
     @IBOutlet weak var playerView: AVPlayerView!
     
     @IBAction func installKeyBindings(_ sender: AnyObject) {
-        let inserter = KeyBindingsInserter(withPath: NSHomeDirectory() + Resources.keyBindingsPath);
+        
+        let usersHomePath = getpwuid(getuid()).pointee.pw_dir
+        
+        let usersHomePathString : String = FileManager.default.string(withFileSystemRepresentation: usersHomePath!, length: Int(strlen(usersHomePath)))
+        
+        let keyBindingsPath = usersHomePathString.appending(pathComponent: Resources.keyBindingsPath)
+
+        let inserter = KeyBindingsInserter(withPath: keyBindingsPath);
         inserter.insertBindings()
     }
     
@@ -57,4 +64,12 @@ class RootWindowController: NSWindowController {
     deinit {
         NotificationCenter.default.removeObserver(self)
     }
+}
+
+extension String {
+    
+    public func appending(pathComponent: String) -> String {
+        return (self as NSString).appendingPathComponent(pathComponent)
+    }
+    
 }
