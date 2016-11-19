@@ -60,7 +60,7 @@
 		591C66161DC6477200FD0FCD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		59CB44F21DD6270F001B7678 /* Import.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Import.entitlements; sourceTree = "<group>"; };
 		961F64411DB67A6F00F7E05A /* open_system_preferences.scpt */ = {isa = PBXFileReference; lastKnownFileType = text; path = open_system_preferences.scpt; sourceTree = "<group>"; };
-		9624F5401DA43C9B005B57F4 /* Import.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Import.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9624F5401DA43C9B005B57F4 /* Import Debug.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Import Debug.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9624F5431DA43C9B005B57F4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9624F5451DA43C9B005B57F4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9624F5481DA43C9B005B57F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
@@ -122,7 +122,7 @@
 		9624F5411DA43C9B005B57F4 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9624F5401DA43C9B005B57F4 /* Import.app */,
+				9624F5401DA43C9B005B57F4 /* Import Debug.app */,
 				9624F54F1DA43C9B005B57F4 /* ImportTests.xctest */,
 				9624F5621DA43CBD005B57F4 /* ImportExtension.appex */,
 			);
@@ -228,7 +228,7 @@
 			);
 			name = Import;
 			productName = Import;
-			productReference = 9624F5401DA43C9B005B57F4 /* Import.app */;
+			productReference = 9624F5401DA43C9B005B57F4 /* Import Debug.app */;
 			productType = "com.apple.product-type.application";
 		};
 		9624F54E1DA43C9B005B57F4 /* ImportTests */ = {
@@ -430,6 +430,7 @@
 				CODE_SIGN_IDENTITY = "-";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DISPLAY_NAME_SUFFIX = " Debug";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -446,6 +447,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IDENTIFIER_SUFFIX = .debug;
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -479,6 +481,7 @@
 				CODE_SIGN_IDENTITY = "-";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DISPLAY_NAME_SUFFIX = "";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -489,6 +492,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IDENTIFIER_SUFFIX = "";
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
@@ -508,8 +512,8 @@
 				INFOPLIST_FILE = Import/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				PRODUCT_BUNDLE_IDENTIFIER = com.squid.Import;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.squid.Import$(IDENTIFIER_SUFFIX)";
+				PRODUCT_NAME = "$(TARGET_NAME)$(DISPLAY_NAME_SUFFIX)";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -526,8 +530,8 @@
 				INFOPLIST_FILE = Import/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				PRODUCT_BUNDLE_IDENTIFIER = com.squid.Import;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.squid.Import$(IDENTIFIER_SUFFIX)";
+				PRODUCT_NAME = "$(TARGET_NAME)$(DISPLAY_NAME_SUFFIX)";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -574,7 +578,7 @@
 				INFOPLIST_FILE = ImportExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				PRODUCT_BUNDLE_IDENTIFIER = com.squid.Import.ImportExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.squid.Import$(IDENTIFIER_SUFFIX).ImportExtension$(IDENTIFIER_SUFFIX)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
@@ -591,7 +595,7 @@
 				INFOPLIST_FILE = ImportExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				PRODUCT_BUNDLE_IDENTIFIER = com.squid.Import.ImportExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.squid.Import$(IDENTIFIER_SUFFIX).ImportExtension$(IDENTIFIER_SUFFIX)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
