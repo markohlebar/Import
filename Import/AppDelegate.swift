@@ -12,7 +12,12 @@ import Cocoa
 class AppDelegate: NSObject, NSApplicationDelegate {
 
     @IBOutlet weak var window: NSWindow!
-    lazy var rootWindowController: RootWindowController = RootWindowController(windowNibName: "RootWindowController")
+
+    lazy var nibName: String = {
+        return isAppSandboxed() ? "RootWindowController_Sandbox": "RootWindowController"
+    }()
+
+    lazy var rootWindowController: RootWindowController = RootWindowController(windowNibName: self.nibName)
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Insert code here to initialize your application

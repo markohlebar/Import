@@ -23,6 +23,8 @@
 		96E7A0F61DA4E82C0069F088 /* RootWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E7A0F41DA4E82C0069F088 /* RootWindowController.swift */; };
 		96E7A0F71DA4E82C0069F088 /* RootWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96E7A0F51DA4E82C0069F088 /* RootWindowController.xib */; };
 		96E7A0F91DA4EC3E0069F088 /* KeyBindingsInserter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E7A0F81DA4EC3E0069F088 /* KeyBindingsInserter.swift */; };
+		96F9FF611DEEC929009A0AE6 /* Sandboxing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F9FF601DEEC929009A0AE6 /* Sandboxing.swift */; };
+		96F9FF631DEED081009A0AE6 /* RootWindowController_Sandbox.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96F9FF621DEED081009A0AE6 /* RootWindowController_Sandbox.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +82,8 @@
 		96E7A0F41DA4E82C0069F088 /* RootWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RootWindowController.swift; path = Windows/RootWindowController.swift; sourceTree = "<group>"; };
 		96E7A0F51DA4E82C0069F088 /* RootWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RootWindowController.xib; path = Windows/RootWindowController.xib; sourceTree = "<group>"; };
 		96E7A0F81DA4EC3E0069F088 /* KeyBindingsInserter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KeyBindingsInserter.swift; path = Controller/KeyBindingsInserter.swift; sourceTree = "<group>"; };
+		96F9FF601DEEC929009A0AE6 /* Sandboxing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Sandboxing.swift; path = Functions/Sandboxing.swift; sourceTree = "<group>"; };
+		96F9FF621DEED081009A0AE6 /* RootWindowController_Sandbox.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RootWindowController_Sandbox.xib; path = Windows/RootWindowController_Sandbox.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +136,7 @@
 		9624F5421DA43C9B005B57F4 /* Import */ = {
 			isa = PBXGroup;
 			children = (
+				96F9FF5F1DEEC8E3009A0AE6 /* Free functions */,
 				59CB44F21DD6270F001B7678 /* Import.entitlements */,
 				965BF2701DA4F3DF00A43900 /* Resources */,
 				96E7A0FA1DA4EC420069F088 /* Controller */,
@@ -197,6 +202,7 @@
 			children = (
 				96E7A0F41DA4E82C0069F088 /* RootWindowController.swift */,
 				96E7A0F51DA4E82C0069F088 /* RootWindowController.xib */,
+				96F9FF621DEED081009A0AE6 /* RootWindowController_Sandbox.xib */,
 			);
 			name = Windows;
 			sourceTree = "<group>";
@@ -207,6 +213,14 @@
 				96E7A0F81DA4EC3E0069F088 /* KeyBindingsInserter.swift */,
 			);
 			name = Controller;
+			sourceTree = "<group>";
+		};
+		96F9FF5F1DEEC8E3009A0AE6 /* Free functions */ = {
+			isa = PBXGroup;
+			children = (
+				96F9FF601DEEC929009A0AE6 /* Sandboxing.swift */,
+			);
+			name = "Free functions";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -326,6 +340,7 @@
 			files = (
 				96514D1B1DA532CC0061F17B /* usage.mov in Resources */,
 				961F64421DB67A6F00F7E05A /* open_system_preferences.scpt in Resources */,
+				96F9FF631DEED081009A0AE6 /* RootWindowController_Sandbox.xib in Resources */,
 				96E7A0F71DA4E82C0069F088 /* RootWindowController.xib in Resources */,
 				9624F5461DA43C9B005B57F4 /* Assets.xcassets in Resources */,
 				965BF2721DA4F3DF00A43900 /* Default.idekeybindings in Resources */,
@@ -355,6 +370,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96F9FF611DEEC929009A0AE6 /* Sandboxing.swift in Sources */,
 				9624F5441DA43C9B005B57F4 /* AppDelegate.swift in Sources */,
 				96E7A0F91DA4EC3E0069F088 /* KeyBindingsInserter.swift in Sources */,
 				96E7A0F61DA4E82C0069F088 /* RootWindowController.swift in Sources */,
@@ -505,7 +521,6 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = Import/Import.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 7LN5U2P4GE;
@@ -523,7 +538,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = Import/Import.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 7LN5U2P4GE;
@@ -602,6 +617,204 @@
 			};
 			name = Release;
 		};
+		96F9FF5B1DEEC754009A0AE6 /* AppStore */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DISPLAY_NAME_SUFFIX = "";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IDENTIFIER_SUFFIX = "";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+			};
+			name = AppStore;
+		};
+		96F9FF5C1DEEC754009A0AE6 /* AppStore */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Import/Import.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 7LN5U2P4GE;
+				INFOPLIST_FILE = Import/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.squid.Import$(IDENTIFIER_SUFFIX)";
+				PRODUCT_NAME = "$(TARGET_NAME)$(DISPLAY_NAME_SUFFIX)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = AppStore;
+		};
+		96F9FF5D1DEEC754009A0AE6 /* AppStore */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = ImportExtension/ImportExtension.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 7LN5U2P4GE;
+				INFOPLIST_FILE = ImportExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.squid.Import$(IDENTIFIER_SUFFIX).ImportExtension$(IDENTIFIER_SUFFIX)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = AppStore;
+		};
+		96F9FF5E1DEEC754009A0AE6 /* AppStore */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 7LN5U2P4GE;
+				INFOPLIST_FILE = ImportTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.squid.ImportTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Import.app/Contents/MacOS/Import";
+			};
+			name = AppStore;
+		};
+		96F9FF641DEED125009A0AE6 /* Debug AppStore */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DISPLAY_NAME_SUFFIX = " Debug";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IDENTIFIER_SUFFIX = .debug;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = "Debug AppStore";
+		};
+		96F9FF651DEED125009A0AE6 /* Debug AppStore */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Import/Import.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 7LN5U2P4GE;
+				DISPLAY_NAME_SUFFIX = " Debug AppStore";
+				IDENTIFIER_SUFFIX = .debug.appstore;
+				INFOPLIST_FILE = Import/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.squid.Import$(IDENTIFIER_SUFFIX)";
+				PRODUCT_NAME = "$(TARGET_NAME)$(DISPLAY_NAME_SUFFIX)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = "Debug AppStore";
+		};
+		96F9FF661DEED125009A0AE6 /* Debug AppStore */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = ImportExtension/ImportExtension.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 7LN5U2P4GE;
+				INFOPLIST_FILE = ImportExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.squid.Import$(IDENTIFIER_SUFFIX).ImportExtension$(IDENTIFIER_SUFFIX)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = "Debug AppStore";
+		};
+		96F9FF671DEED125009A0AE6 /* Debug AppStore */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 7LN5U2P4GE;
+				INFOPLIST_FILE = ImportTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.squid.ImportTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Import.app/Contents/MacOS/Import";
+			};
+			name = "Debug AppStore";
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -609,7 +822,9 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9624F5561DA43C9B005B57F4 /* Debug */,
+				96F9FF641DEED125009A0AE6 /* Debug AppStore */,
 				9624F5571DA43C9B005B57F4 /* Release */,
+				96F9FF5B1DEEC754009A0AE6 /* AppStore */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -618,7 +833,9 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9624F5591DA43C9B005B57F4 /* Debug */,
+				96F9FF651DEED125009A0AE6 /* Debug AppStore */,
 				9624F55A1DA43C9B005B57F4 /* Release */,
+				96F9FF5C1DEEC754009A0AE6 /* AppStore */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -627,7 +844,9 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9624F55C1DA43C9B005B57F4 /* Debug */,
+				96F9FF671DEED125009A0AE6 /* Debug AppStore */,
 				9624F55D1DA43C9B005B57F4 /* Release */,
+				96F9FF5E1DEEC754009A0AE6 /* AppStore */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -636,7 +855,9 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9624F5721DA43CBD005B57F4 /* Debug */,
+				96F9FF661DEED125009A0AE6 /* Debug AppStore */,
 				9624F5731DA43CBD005B57F4 /* Release */,
+				96F9FF5D1DEEC754009A0AE6 /* AppStore */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
