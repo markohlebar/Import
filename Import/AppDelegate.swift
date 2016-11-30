@@ -14,7 +14,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @IBOutlet weak var window: NSWindow!
 
     lazy var nibName: String = {
-        return isAppSandboxed() ? "RootWindowController_Sandbox": "RootWindowController"
+        return Sandboxing.isAppSandboxed() ? "RootWindowController_Sandbox": "RootWindowController"
     }()
 
     lazy var rootWindowController: RootWindowController = RootWindowController(windowNibName: self.nibName)

@@ -9,35 +9,44 @@
 import Foundation
 import Security
 
-//https://forums.developer.apple.com/message/135465#135465
-func isAppSandboxed() -> Bool {
-    var err: OSStatus
-    var me: SecCode?
-    var dynamicInfo: CFDictionary?
-    let defaultFlags = SecCSFlags(rawValue: 0)
+public struct Sandboxing {
+    //https://forums.developer.apple.com/message/135465#135465
+    public static func isAppSandboxed() -> Bool {
+        var err: OSStatus
+        var me: SecCode?
+        var dynamicInfo: CFDictionary?
+        let defaultFlags = SecCSFlags(rawValue: 0)
 
-    err = SecCodeCopySelf(defaultFlags, &me)
+        err = SecCodeCopySelf(defaultFlags, &me)
 
-    guard me != nil else {
+        guard me != nil else {
+            return false
+        }
+
+        var staticMe: SecStaticCode?
+        err =  SecCodeCopyStaticCode(me!, defaultFlags, &staticMe)
+
+        guard staticMe != nil else {
+            return false
+        }
+
+        err = SecCodeCopySigningInformation(staticMe!, SecCSFlags(rawValue: kSecCSDynamicInformation), &dynamicInfo)
+        assert(err == errSecSuccess)
+
+        if let info = dynamicInfo as? [String: Any],
+            let entitlementsDict = info["entitlements-dict"] as? [String: Any],
+            let value = entitlementsDict["com.apple.security.app-sandbox"] as? Bool {
+            return value
+        }
+
         return false
     }
 
-    var staticMe: SecStaticCode?
-    err =  SecCodeCopyStaticCode(me!, defaultFlags, &staticMe)
-
-    guard staticMe != nil else {
-        return false
+    public static func userHomePath() -> String {
+        let usersHomePath = getpwuid(getuid()).pointee.pw_dir
+        let usersHomePathString : String = FileManager.default.string(withFileSystemRepresentation: usersHomePath!, length: Int(strlen(usersHomePath)))
+        return usersHomePathString
     }
-
-    err = SecCodeCopySigningInformation(staticMe!, SecCSFlags(rawValue: kSecCSDynamicInformation), &dynamicInfo)
-    assert(err == errSecSuccess)
-
-    if let info = dynamicInfo as? [String: Any],
-        let entitlementsDict = info["entitlements-dict"] as? [String: Any],
-        let value = entitlementsDict["com.apple.security.app-sandbox"] as? Bool {
-        return value
-    }
-
-    return false
 }
+
 

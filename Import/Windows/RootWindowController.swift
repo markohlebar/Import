@@ -19,15 +19,12 @@ fileprivate enum Resources {
 class RootWindowController: NSWindowController {
 
     @IBOutlet weak var playerView: AVPlayerView!
+
+    lazy var keyBindingsPath: String = {
+        return Sandboxing.userHomePath().appending(pathComponent: Resources.keyBindingsPath)
+    }()
     
     @IBAction func installKeyBindings(_ sender: AnyObject) {
-        
-        let usersHomePath = getpwuid(getuid()).pointee.pw_dir
-        
-        let usersHomePathString : String = FileManager.default.string(withFileSystemRepresentation: usersHomePath!, length: Int(strlen(usersHomePath)))
-        
-        let keyBindingsPath = usersHomePathString.appending(pathComponent: Resources.keyBindingsPath)
-
         let inserter = KeyBindingsInserter(withPath: keyBindingsPath);
         inserter.insertBindings()
     }

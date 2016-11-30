@@ -118,6 +118,19 @@ class KeyBindingsInserter {
     }
     
     private func installVanillaPlist() {
+        let keyBindingsFolder = NSString(string: path).deletingLastPathComponent
+        if !FileManager.default.fileExists(atPath: keyBindingsFolder) {
+            do {
+                try FileManager.default.createDirectory(atPath: keyBindingsFolder,
+                                                        withIntermediateDirectories: true,
+                                                        attributes: nil)
+            }
+            catch let error as NSError {
+                present(error: error)
+                return
+            }
+        }
+
         do {
             try FileManager.default.copyItem(atPath: vanillaPlistPath, toPath: path)
             present(message: Messages.BindingIsSet, style: .informational)
