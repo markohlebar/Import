@@ -136,9 +136,9 @@
 		9624F5421DA43C9B005B57F4 /* Import */ = {
 			isa = PBXGroup;
 			children = (
-				96F9FF5F1DEEC8E3009A0AE6 /* Free functions */,
 				59CB44F21DD6270F001B7678 /* Import.entitlements */,
 				965BF2701DA4F3DF00A43900 /* Resources */,
+				96F9FF5F1DEEC8E3009A0AE6 /* Sandboxing */,
 				96E7A0FA1DA4EC420069F088 /* Controller */,
 				96E7A0F11DA4E7350069F088 /* Windows */,
 				9624F5431DA43C9B005B57F4 /* AppDelegate.swift */,
@@ -215,12 +215,12 @@
 			name = Controller;
 			sourceTree = "<group>";
 		};
-		96F9FF5F1DEEC8E3009A0AE6 /* Free functions */ = {
+		96F9FF5F1DEEC8E3009A0AE6 /* Sandboxing */ = {
 			isa = PBXGroup;
 			children = (
 				96F9FF601DEEC929009A0AE6 /* Sandboxing.swift */,
 			);
-			name = "Free functions";
+			name = Sandboxing;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
