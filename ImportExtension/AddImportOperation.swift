@@ -43,14 +43,21 @@ class AddImportOperation {
     
     func execute() {
         let selection = self.buffer.selections.firstObject as! XCSourceTextRange
-        let selectionLine = selection.start.line
-        let importString = (self.buffer.lines[selectionLine] as! String).trimmingCharacters(in: CharacterSet.whitespaces)
+        var selectionLine = selection.start.line
+        
+        var importString = (self.buffer.lines[selectionLine] as! String).trimmingCharacters(in: CharacterSet.whitespaces)
+        importString = importString.trimmingCharacters(in: CharacterSet.init(charactersIn: " \t\n"))
         
         guard isValid(importString: importString) else {
             self.completionHandler(nil)
             return
         }
-        let line = appropriateLine(ignoringLine: selectionLine)
+        
+        //remove duplicate imports
+        let removeNum = removeDuplicate(importString: importString)
+        selectionLine = selectionLine-removeNum
+        
+        let line = appropriateLine()
         guard line != NSNotFound else {
             self.completionHandler(nil)
             return
@@ -114,14 +121,30 @@ class AddImportOperation {
             return
         }
         
-        self.buffer.lines.removeObject(at: selectionLine)
         self.buffer.lines.insert(importString, at: line)
         
         //add a new selection. Bug fix for #7
-        let selectionPosition = XCSourceTextRange.init(start: XCSourceTextPosition.init(line: 0, column: 0), end: XCSourceTextPosition.init(line: 0, column: 0))
+        let selectionPosition = XCSourceTextRange.init(start: XCSourceTextPosition.init(line: selectionLine, column: 0), end: XCSourceTextPosition.init(line: selectionLine, column: 0))
         self.buffer.selections.removeAllObjects()
         self.buffer.selections.insert(selectionPosition, at: 0)
         self.completionHandler(nil)
+    }
+    
+    func removeDuplicate(importString: String) -> Int {
+        
+        //do not forget itself
+        var lineNumber = -1;
+        
+        let tempLines = NSMutableArray.init(array: buffer.lines)
+        tempLines.enumerateObjects(options: .reverse) { (line, index, stop) in
+            let string = (line as! String).trimmingCharacters(in: CharacterSet.init(charactersIn: " \t\n"))
+            if string == importString {
+                buffer.lines.removeObject(at: index)
+                lineNumber += 1
+            }
+        }
+        
+        return lineNumber
     }
     
     func isValid(importString: String) -> Bool {
@@ -140,15 +163,12 @@ class AddImportOperation {
         return numberOfMatches > 0
     }
     
-    func appropriateLine(ignoringLine: Int) -> Int {
+    func appropriateLine() -> Int {
         var lineNumber = NSNotFound
         let lines = buffer.lines as NSArray as! [String]
         
         //Find the line that is first after all the imports
         for (index, line) in lines.enumerated() {
-            if index == ignoringLine {
-                continue
-            }
             
             if isValid(importString: line) {
                 lineNumber = index
@@ -161,10 +181,6 @@ class AddImportOperation {
         
         //if a line is not found, find first free line after comments
         for (index, line) in lines.enumerated() {
-            if index == ignoringLine {
-                continue
-            }
-            
             lineNumber = index
             if line.isWhitespaceOrNewline() {
                 break
