@@ -35,18 +35,32 @@ class AddImportOperation {
         guard isValid(importString: importString) else {
             return
         }
+        
+        //remove duplicate imports
+        removeDuplicate(importString: importString)
+        
         let line = appropriateLine(ignoringLine: selectionLine)
         guard line != NSNotFound else {
             return
         }
         
-        self.buffer.lines.removeObject(at: selectionLine)
         self.buffer.lines.insert(importString, at: line)
         
         //add a new selection. Bug fix for #7
-        let selectionPosition = XCSourceTextRange.init(start: XCSourceTextPosition.init(line: 0, column: 0), end: XCSourceTextPosition.init(line: 0, column: 0))
+        let selectionPosition = XCSourceTextRange.init(start: XCSourceTextPosition.init(line: selectionLine, column: 0), end: XCSourceTextPosition.init(line: selectionLine, column: 0))
         self.buffer.selections.removeAllObjects()
         self.buffer.selections.insert(selectionPosition, at: 0)
+    }
+    
+    func removeDuplicate(importString: String) -> Void {
+        
+        let tempLines = NSMutableArray.init(array: buffer.lines)
+        tempLines.enumerateObjects(options: .reverse) { (line, index, stop) in
+            if line as! String == importString {
+                buffer.lines.removeObject(at: index)
+            }
+        }
+        
     }
     
     func isValid(importString: String) -> Bool {
