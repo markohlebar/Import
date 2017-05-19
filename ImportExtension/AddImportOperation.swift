@@ -15,6 +15,7 @@ fileprivate struct AddImportOperationConstants {
     static let objcImport = ".*#.*(import|include).*[\",<].*[\",>]"
     static let objcModuleImport = ".*@.*(import).*.;"
     static let swiftModuleImport = ".*(import) +.*."
+    static let objcClassForwardDeclaration = ".*@.*(class).*.;"
     
     /// Double import strings
     /// Note: For the `doubleImportWarningString` string, we're using a non-breaking space (\u00A0), not a normal space
@@ -32,6 +33,7 @@ class AddImportOperation {
     lazy var importRegex = try! NSRegularExpression(pattern: AddImportOperationConstants.objcImport, options: NSRegularExpression.Options(rawValue: UInt(0)))
     lazy var moduleImportRegex = try! NSRegularExpression(pattern: AddImportOperationConstants.objcModuleImport, options: NSRegularExpression.Options(rawValue: UInt(0)))
     lazy var swiftModuleImportRegex = try! NSRegularExpression(pattern: AddImportOperationConstants.swiftModuleImport, options: NSRegularExpression.Options(rawValue: UInt(0)))
+    lazy var objcClassForwardDeclarationRegex = try! NSRegularExpression(pattern: AddImportOperationConstants.objcClassForwardDeclaration, options: NSRegularExpression.Options(rawValue: UInt(0)))
 
     var lineToRemove: Int = NSNotFound
     
@@ -135,6 +137,7 @@ class AddImportOperation {
         else {
             numberOfMatches = importRegex.numberOfMatches(in: importString, options: matchingOptions, range: range)
             numberOfMatches = numberOfMatches > 0 ? numberOfMatches : moduleImportRegex.numberOfMatches(in: importString, options: matchingOptions, range: range)
+            numberOfMatches = numberOfMatches > 0 ? numberOfMatches : objcClassForwardDeclarationRegex.numberOfMatches(in: importString, options: matchingOptions, range: range)
         }
         
         return numberOfMatches > 0
