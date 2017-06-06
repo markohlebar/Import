@@ -21,7 +21,7 @@ This was built to replace [Peckham](https://github.com/markohlebar/Peckham), as 
 - check if `Editor -> Import -> ☝️` is there 
 - WIN
 
-### Usage
+### Usage
 
 Import uses Xcode's autocomplete, this works best when written inside a function / a method
 
