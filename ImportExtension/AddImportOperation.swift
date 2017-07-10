@@ -97,19 +97,19 @@ class AddImportOperation {
                 
                 if (response == NSAlertFirstButtonReturn) {
                     
-                    let selectionPosition = XCSourceTextRange.init(start: XCSourceTextPosition.init(line: 0, column: 0), end: XCSourceTextPosition.init(line: 0, column: 0))
+                    let currentPosition = XCSourceTextPosition(line: selectionLine, column: 0)
                     
-                    self.buffer.selections.removeAllObjects()
-                    
-                    self.buffer.selections.insert(selectionPosition, at: 0)
+                    let updatedSelection = XCSourceTextRange(start: currentPosition, end: currentPosition)
                     
                     self.buffer.lines.removeObject(at: self.lineToRemove)
+                    
+                    self.buffer.selections.setArray([updatedSelection])
                 }
                 
                 NSApp.deactivate()
                 
                 frontmostApplication?.activate(options: NSApplicationActivationOptions(rawValue: 0))
-
+                
                 self.completionHandler(nil)
             })
             
@@ -120,9 +120,12 @@ class AddImportOperation {
         self.buffer.lines.insert(importString, at: line)
         
         //add a new selection. Bug fix for #7
-        let selectionPosition = XCSourceTextRange.init(start: XCSourceTextPosition.init(line: 0, column: 0), end: XCSourceTextPosition.init(line: 0, column: 0))
-        self.buffer.selections.removeAllObjects()
-        self.buffer.selections.insert(selectionPosition, at: 0)
+        let currentPosition = XCSourceTextPosition(line: selectionLine, column: 0)
+        
+        let updatedSelection = XCSourceTextRange(start: currentPosition, end: currentPosition)
+
+        self.buffer.selections.setArray([updatedSelection])
+        
         self.completionHandler(nil)
     }
     
