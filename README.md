@@ -11,7 +11,7 @@ This was built to replace [Peckham](https://github.com/markohlebar/Peckham), as 
 
 - close Xcode
 - (*OSX 10.11 only*) `sudo /usr/libexec/xpccachectl`
-- download the [Import app](https://github.com/markohlebar/Import/releases/download/1.0.3/Import.app.zip)
+- download the [Import app](https://github.com/markohlebar/Import/releases/download/1.0.7/Import.zip)
 - unzip and copy to Applications folder
 - run (right click + open)
 - (*optional*) click on **Install Key Bindings** to install `⌘ + ctrl + P` binding
