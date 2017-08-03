@@ -15,7 +15,7 @@ fileprivate struct AddImportOperationConstants {
     static let objcImport = ".*#.*(import|include).*[\",<].*[\",>]"
     static let objcModuleImport = ".*@.*(import).*.;"
     static let swiftModuleImport = ".*(import) +.*."
-    static let objcClassForwardDeclaration = ".*@.*(class).*.;"
+    static let objcClassForwardDeclaration = "@(class).*.;"
     
     /// Double import strings
     /// Note: For the `doubleImportWarningString` string, we're using a non-breaking space (\u00A0), not a normal space
