@@ -577,7 +577,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.squid.ImportTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Import.app/Contents/MacOS/Import";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Import Debug.app/Contents/MacOS/Import Debug";
 			};
 			name = Debug;
 		};
@@ -593,7 +593,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.squid.ImportTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Import.app/Contents/MacOS/Import";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Import Debug.app/Contents/MacOS/Import Debug";
 			};
 			name = Release;
 		};
@@ -728,7 +728,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.squid.ImportTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Import.app/Contents/MacOS/Import";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Import Debug.app/Contents/MacOS/Import Debug";
 			};
 			name = AppStore;
 		};
@@ -840,7 +840,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.squid.ImportTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Import.app/Contents/MacOS/Import";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Import Debug.app/Contents/MacOS/Import Debug";
 			};
 			name = "Debug AppStore";
 		};
