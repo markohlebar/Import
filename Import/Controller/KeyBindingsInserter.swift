@@ -140,7 +140,7 @@ class KeyBindingsInserter {
         }
     }
     
-    private func present(message: String, style: NSAlertStyle) {
+    private func present(message: String, style: NSAlert.Style) {
         let alert = NSAlert()
         alert.messageText = (style == .informational) ? "👍" : "🤕"
         alert.informativeText = message

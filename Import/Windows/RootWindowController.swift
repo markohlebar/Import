@@ -53,7 +53,7 @@ class RootWindowController: NSWindowController {
                                                object: player.currentItem!)
     }
     
-    func loop(with notification: Notification) {
+    @objc func loop(with notification: Notification) {
         let item = notification.object as! AVPlayerItem
         item.seek(to: kCMTimeZero)
     }

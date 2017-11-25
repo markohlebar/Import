@@ -83,9 +83,9 @@ class AddImportOperation {
                 
                 doubleImportAlert.accessoryView = fakeView
                 
-                NSBeep()
+                NSSound.beep()
 
-                let frontmostApplication = NSWorkspace.shared().frontmostApplication
+                let frontmostApplication = NSWorkspace.shared.frontmostApplication
                 
                 let appWindow = doubleImportAlert.window
                 
@@ -95,7 +95,7 @@ class AddImportOperation {
                 
                 let response = doubleImportAlert.runModal()
                 
-                if (response == NSAlertFirstButtonReturn) {
+                if (response == NSApplication.ModalResponse.alertFirstButtonReturn) {
                     
                     let currentPosition = XCSourceTextPosition(line: selectionLine, column: 0)
                     
