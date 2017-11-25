@@ -131,8 +131,8 @@ class AddImportOperation {
     
     func isValid(importString: String) -> Bool {
         var numberOfMatches = 0
-        let range = NSMakeRange(0, importString.characters.count)
         let matchingOptions : NSRegularExpression.MatchingOptions = []
+        let range = NSMakeRange(0, importString.count)
         
         if buffer.isSwiftSource {
             numberOfMatches = swiftModuleImportRegex.numberOfMatches(in: importString, options: matchingOptions, range: range)
@@ -205,7 +205,7 @@ fileprivate extension String {
     
     func isWhitespaceOrNewline() -> Bool {
         let string = self.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
-        return string.characters.count == 0
+        return string.count == 0
         
     }
 }
