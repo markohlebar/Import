@@ -12,7 +12,7 @@ import AppKit
 fileprivate struct AddImportOperationConstants {
     
     /// Import matchers
-    static let objcImport = "#(import|include).*[\",<].*[\",>]"
+    static let objcImport = "#\s*(import|include).*[\",<].*[\",>]"
     static let objcModuleImport = "@(import).*.;"
     static let swiftModuleImport = "(import) +.*."
     static let objcClassForwardDeclaration = "@(class).*.;"
