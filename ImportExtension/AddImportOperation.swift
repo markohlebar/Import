@@ -30,10 +30,10 @@ class AddImportOperation {
     
     let completionHandler: (Error?) -> Void
     
-    lazy var importRegex = try! NSRegularExpression(pattern: AddImportOperationConstants.objcImport, options: NSRegularExpression.Options(rawValue: UInt(0)))
-    lazy var moduleImportRegex = try! NSRegularExpression(pattern: AddImportOperationConstants.objcModuleImport, options: NSRegularExpression.Options(rawValue: UInt(0)))
-    lazy var swiftModuleImportRegex = try! NSRegularExpression(pattern: AddImportOperationConstants.swiftModuleImport, options: NSRegularExpression.Options(rawValue: UInt(0)))
-    lazy var objcClassForwardDeclarationRegex = try! NSRegularExpression(pattern: AddImportOperationConstants.objcClassForwardDeclaration, options: NSRegularExpression.Options(rawValue: UInt(0)))
+    lazy var importRegex = try! NSRegularExpression(pattern: AddImportOperationConstants.objcImport, options: [])
+    lazy var moduleImportRegex = try! NSRegularExpression(pattern: AddImportOperationConstants.objcModuleImport, options: [])
+    lazy var swiftModuleImportRegex = try! NSRegularExpression(pattern: AddImportOperationConstants.swiftModuleImport, options: [])
+    lazy var objcClassForwardDeclarationRegex = try! NSRegularExpression(pattern: AddImportOperationConstants.objcClassForwardDeclaration, options: [])
 
     var lineToRemove: Int = NSNotFound
     
@@ -83,9 +83,9 @@ class AddImportOperation {
                 
                 doubleImportAlert.accessoryView = fakeView
                 
-                NSBeep()
+                NSSound.beep()
 
-                let frontmostApplication = NSWorkspace.shared().frontmostApplication
+                let frontmostApplication = NSWorkspace.shared.frontmostApplication
                 
                 let appWindow = doubleImportAlert.window
                 
@@ -95,7 +95,7 @@ class AddImportOperation {
                 
                 let response = doubleImportAlert.runModal()
                 
-                if (response == NSAlertFirstButtonReturn) {
+                if (response == NSApplication.ModalResponse.alertFirstButtonReturn) {
                     
                     let currentPosition = XCSourceTextPosition(line: selectionLine, column: 0)
                     
@@ -108,7 +108,7 @@ class AddImportOperation {
                 
                 NSApp.deactivate()
                 
-                frontmostApplication?.activate(options: NSApplicationActivationOptions(rawValue: 0))
+                frontmostApplication?.activate(options: [])
                 
                 self.completionHandler(nil)
             })
@@ -131,8 +131,8 @@ class AddImportOperation {
     
     func isValid(importString: String) -> Bool {
         var numberOfMatches = 0
-        let matchingOptions = NSRegularExpression.MatchingOptions(rawValue: UInt(0))
-        let range = NSMakeRange(0, importString.characters.count)
+        let matchingOptions : NSRegularExpression.MatchingOptions = []
+        let range = NSMakeRange(0, importString.count)
         
         if buffer.isSwiftSource {
             numberOfMatches = swiftModuleImportRegex.numberOfMatches(in: importString, options: matchingOptions, range: range)
@@ -205,7 +205,7 @@ fileprivate extension String {
     
     func isWhitespaceOrNewline() -> Bool {
         let string = self.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
-        return string.characters.count == 0
+        return string.count == 0
         
     }
 }
