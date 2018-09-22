@@ -240,13 +240,13 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0800;
-				LastUpgradeCheck = 0910;
+				LastUpgradeCheck = 1000;
 				ORGANIZATIONNAME = "Marko Hlebar";
 				TargetAttributes = {
 					9624F53F1DA43C9B005B57F4 = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = 7LN5U2P4GE;
-						LastSwiftMigration = 0910;
+						LastSwiftMigration = 1000;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Sandbox = {
@@ -254,17 +254,10 @@
 							};
 						};
 					};
-					9624F54E1DA43C9B005B57F4 = {
-						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = 7LN5U2P4GE;
-						LastSwiftMigration = 0910;
-						ProvisioningStyle = Automatic;
-						TestTargetID = 9624F53F1DA43C9B005B57F4;
-					};
 					9624F5611DA43CBD005B57F4 = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = 7LN5U2P4GE;
-						LastSwiftMigration = 0910;
+						LastSwiftMigration = 1000;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -482,8 +475,8 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.squid.Import$(IDENTIFIER_SUFFIX)";
 				PRODUCT_NAME = "$(TARGET_NAME)$(DISPLAY_NAME_SUFFIX)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -501,8 +494,8 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.squid.Import$(IDENTIFIER_SUFFIX)";
 				PRODUCT_NAME = "$(TARGET_NAME)$(DISPLAY_NAME_SUFFIX)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};
@@ -519,8 +512,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.squid.Import$(IDENTIFIER_SUFFIX).ImportExtension$(IDENTIFIER_SUFFIX)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -537,8 +529,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.squid.Import$(IDENTIFIER_SUFFIX).ImportExtension$(IDENTIFIER_SUFFIX)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};
@@ -608,8 +599,8 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.squid.Import$(IDENTIFIER_SUFFIX)";
 				PRODUCT_NAME = "$(TARGET_NAME)$(DISPLAY_NAME_SUFFIX)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 4.2;
 			};
 			name = AppStore;
 		};
@@ -626,8 +617,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.squid.Import$(IDENTIFIER_SUFFIX).ImportExtension$(IDENTIFIER_SUFFIX)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = AppStore;
 		};
@@ -707,8 +697,8 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.squid.Import$(IDENTIFIER_SUFFIX)";
 				PRODUCT_NAME = "$(TARGET_NAME)$(DISPLAY_NAME_SUFFIX)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 4.2;
 			};
 			name = "Debug AppStore";
 		};
@@ -726,8 +716,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.squid.Import$(IDENTIFIER_SUFFIX).ImportExtension$(IDENTIFIER_SUFFIX)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = "Debug AppStore";
 		};
