@@ -12,7 +12,6 @@
 		9624F5441DA43C9B005B57F4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9624F5431DA43C9B005B57F4 /* AppDelegate.swift */; };
 		9624F5461DA43C9B005B57F4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9624F5451DA43C9B005B57F4 /* Assets.xcassets */; };
 		9624F5491DA43C9B005B57F4 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9624F5471DA43C9B005B57F4 /* MainMenu.xib */; };
-		9624F5541DA43C9B005B57F4 /* ImportTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9624F5531DA43C9B005B57F4 /* ImportTests.swift */; };
 		9624F5651DA43CBD005B57F4 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9624F5641DA43CBD005B57F4 /* Cocoa.framework */; };
 		9624F56A1DA43CBD005B57F4 /* SourceEditorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9624F5691DA43CBD005B57F4 /* SourceEditorExtension.swift */; };
 		9624F56C1DA43CBD005B57F4 /* SourceEditorCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9624F56B1DA43CBD005B57F4 /* SourceEditorCommand.swift */; };
@@ -28,13 +27,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		9624F5501DA43C9B005B57F4 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 9624F5381DA43C9B005B57F4 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 9624F53F1DA43C9B005B57F4;
-			remoteInfo = Import;
-		};
 		9624F56E1DA43CBD005B57F4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 9624F5381DA43C9B005B57F4 /* Project object */;
@@ -67,9 +59,6 @@
 		9624F5451DA43C9B005B57F4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9624F5481DA43C9B005B57F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		9624F54A1DA43C9B005B57F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9624F54F1DA43C9B005B57F4 /* ImportTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ImportTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		9624F5531DA43C9B005B57F4 /* ImportTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportTests.swift; sourceTree = "<group>"; };
-		9624F5551DA43C9B005B57F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9624F5621DA43CBD005B57F4 /* ImportExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ImportExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		9624F5641DA43CBD005B57F4 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		9624F5681DA43CBD005B57F4 /* ImportExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ImportExtension.entitlements; sourceTree = "<group>"; };
@@ -94,13 +83,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9624F54C1DA43C9B005B57F4 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		9624F55F1DA43CBD005B57F4 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -116,7 +98,6 @@
 			isa = PBXGroup;
 			children = (
 				9624F5421DA43C9B005B57F4 /* Import */,
-				9624F5521DA43C9B005B57F4 /* ImportTests */,
 				9624F5661DA43CBD005B57F4 /* ImportExtension */,
 				9624F5631DA43CBD005B57F4 /* Frameworks */,
 				9624F5411DA43C9B005B57F4 /* Products */,
@@ -127,7 +108,6 @@
 			isa = PBXGroup;
 			children = (
 				9624F5401DA43C9B005B57F4 /* Import Debug.app */,
-				9624F54F1DA43C9B005B57F4 /* ImportTests.xctest */,
 				9624F5621DA43CBD005B57F4 /* ImportExtension.appex */,
 			);
 			name = Products;
@@ -147,15 +127,6 @@
 				9624F54A1DA43C9B005B57F4 /* Info.plist */,
 			);
 			path = Import;
-			sourceTree = "<group>";
-		};
-		9624F5521DA43C9B005B57F4 /* ImportTests */ = {
-			isa = PBXGroup;
-			children = (
-				9624F5531DA43C9B005B57F4 /* ImportTests.swift */,
-				9624F5551DA43C9B005B57F4 /* Info.plist */,
-			);
-			path = ImportTests;
 			sourceTree = "<group>";
 		};
 		9624F5631DA43CBD005B57F4 /* Frameworks */ = {
@@ -245,24 +216,6 @@
 			productReference = 9624F5401DA43C9B005B57F4 /* Import Debug.app */;
 			productType = "com.apple.product-type.application";
 		};
-		9624F54E1DA43C9B005B57F4 /* ImportTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 9624F55B1DA43C9B005B57F4 /* Build configuration list for PBXNativeTarget "ImportTests" */;
-			buildPhases = (
-				9624F54B1DA43C9B005B57F4 /* Sources */,
-				9624F54C1DA43C9B005B57F4 /* Frameworks */,
-				9624F54D1DA43C9B005B57F4 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				9624F5511DA43C9B005B57F4 /* PBXTargetDependency */,
-			);
-			name = ImportTests;
-			productName = ImportTests;
-			productReference = 9624F54F1DA43C9B005B57F4 /* ImportTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 		9624F5611DA43CBD005B57F4 /* ImportExtension */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9624F5711DA43CBD005B57F4 /* Build configuration list for PBXNativeTarget "ImportExtension" */;
@@ -331,7 +284,6 @@
 			targets = (
 				9624F53F1DA43C9B005B57F4 /* Import */,
 				9624F5611DA43CBD005B57F4 /* ImportExtension */,
-				9624F54E1DA43C9B005B57F4 /* ImportTests */,
 			);
 		};
 /* End PBXProject section */
@@ -348,13 +300,6 @@
 				9624F5461DA43C9B005B57F4 /* Assets.xcassets in Resources */,
 				965BF2721DA4F3DF00A43900 /* Default.idekeybindings in Resources */,
 				9624F5491DA43C9B005B57F4 /* MainMenu.xib in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		9624F54D1DA43C9B005B57F4 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -380,14 +325,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9624F54B1DA43C9B005B57F4 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				9624F5541DA43C9B005B57F4 /* ImportTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		9624F55E1DA43CBD005B57F4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -401,11 +338,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		9624F5511DA43C9B005B57F4 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 9624F53F1DA43C9B005B57F4 /* Import */;
-			targetProxy = 9624F5501DA43C9B005B57F4 /* PBXContainerItemProxy */;
-		};
 		9624F56F1DA43CBD005B57F4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 9624F5611DA43CBD005B57F4 /* ImportExtension */;
@@ -438,6 +370,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -445,6 +378,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -496,6 +430,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -503,6 +438,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -570,40 +506,6 @@
 			};
 			name = Release;
 		};
-		9624F55C1DA43C9B005B57F4 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = 7LN5U2P4GE;
-				INFOPLIST_FILE = ImportTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.squid.ImportTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Import Debug.app/Contents/MacOS/Import Debug";
-			};
-			name = Debug;
-		};
-		9624F55D1DA43C9B005B57F4 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = 7LN5U2P4GE;
-				INFOPLIST_FILE = ImportTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.squid.ImportTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Import Debug.app/Contents/MacOS/Import Debug";
-			};
-			name = Release;
-		};
 		9624F5721DA43CBD005B57F4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -653,6 +555,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -660,6 +563,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -727,23 +631,6 @@
 			};
 			name = AppStore;
 		};
-		96F9FF5E1DEEC754009A0AE6 /* AppStore */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = 7LN5U2P4GE;
-				INFOPLIST_FILE = ImportTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.squid.ImportTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Import Debug.app/Contents/MacOS/Import Debug";
-			};
-			name = AppStore;
-		};
 		96F9FF641DEED125009A0AE6 /* Debug AppStore */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -757,6 +644,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -764,6 +652,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -842,23 +731,6 @@
 			};
 			name = "Debug AppStore";
 		};
-		96F9FF671DEED125009A0AE6 /* Debug AppStore */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = 7LN5U2P4GE;
-				INFOPLIST_FILE = ImportTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.squid.ImportTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Import Debug.app/Contents/MacOS/Import Debug";
-			};
-			name = "Debug AppStore";
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -880,17 +752,6 @@
 				96F9FF651DEED125009A0AE6 /* Debug AppStore */,
 				9624F55A1DA43C9B005B57F4 /* Release */,
 				96F9FF5C1DEEC754009A0AE6 /* AppStore */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		9624F55B1DA43C9B005B57F4 /* Build configuration list for PBXNativeTarget "ImportTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				9624F55C1DA43C9B005B57F4 /* Debug */,
-				96F9FF671DEED125009A0AE6 /* Debug AppStore */,
-				9624F55D1DA43C9B005B57F4 /* Release */,
-				96F9FF5E1DEEC754009A0AE6 /* AppStore */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
