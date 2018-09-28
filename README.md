@@ -9,6 +9,10 @@ This was built to replace [Peckham](https://github.com/markohlebar/Peckham), as 
 
 ### Installation Guide (Xcode 8 / OSX 10.11+)
 
+- get it on [App Store](https://itunes.apple.com/ie/app/import/id1167060791?mt=12)
+
+OR
+
 - close Xcode
 - (*OSX 10.11 only*) `sudo /usr/libexec/xpccachectl`
 - download the [Import app](https://github.com/markohlebar/Import/releases/download/1.0.7/Import.zip)
