@@ -1,5 +1,7 @@
 # Import ☝️
-Xcode extension for adding imports from anywhere in the code
+Xcode extension for adding imports from anywhere in the code. 
+
+Now available on [App Store](https://itunes.apple.com/ie/app/import/id1167060791?mt=12)
 
 ![usage.gif](/Resources/usage.gif)
 
