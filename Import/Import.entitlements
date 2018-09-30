@@ -4,9 +4,5 @@
 <dict>
 	<key>com.apple.security.app-sandbox</key>
 	<true/>
-	<key>com.apple.security.temporary-exception.files.home-relative-path.read-write</key>
-	<array>
-		<string>/Library/Developer/Xcode/UserData/KeyBindings/</string>
-	</array>
 </dict>
 </plist>
