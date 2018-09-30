@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="11542" systemVersion="16C41b" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.AVKitIBPlugin" version="11542"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11542"/>
+        <plugIn identifier="com.apple.AVKitIBPlugin" version="14313.18"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14313.18"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -15,40 +15,43 @@
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
-        <window title="Import ☝️" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" animationBehavior="default" id="F0z-JX-Cv5">
+        <window title="Import ☝️" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="F0z-JX-Cv5">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="196" y="240" width="456" height="385"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1280" height="777"/>
             <value key="minSize" type="size" width="456" height="385"/>
             <value key="maxSize" type="size" width="456" height="385"/>
-            <view key="contentView" wantsLayer="YES" id="se5-gp-TjO">
-                <rect key="frame" x="0.0" y="0.0" width="456" height="385"/>
+            <view key="contentView" wantsLayer="YES" misplaced="YES" id="se5-gp-TjO">
+                <rect key="frame" x="0.0" y="0.0" width="1020" height="621"/>
                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 <subviews>
-                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="VOL-kt-VV6" userLabel="Install Key Bindings">
-                        <rect key="frame" x="14" y="337" width="428" height="32"/>
-                        <buttonCell key="cell" type="push" title="Install Key Bindings (⌘ + ctrl + P)" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="wn8-lI-Bpu">
-                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                            <font key="font" metaFont="system"/>
-                        </buttonCell>
-                        <connections>
-                            <action selector="installKeyBindings:" target="-2" id="KTN-gj-mhJ"/>
-                        </connections>
-                    </button>
                     <avPlayerView controlsStyle="none" translatesAutoresizingMaskIntoConstraints="NO" id="8ZN-wE-bYO">
-                        <rect key="frame" x="20" y="20" width="416" height="304"/>
+                        <rect key="frame" x="20" y="20" width="960" height="540"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="416" id="8TS-7d-Ywn"/>
-                            <constraint firstAttribute="height" constant="304" id="gei-zp-aMm"/>
+                            <constraint firstAttribute="width" constant="960" id="8TS-7d-Ywn"/>
+                            <constraint firstAttribute="height" constant="540" id="gei-zp-aMm"/>
                         </constraints>
                     </avPlayerView>
+                    <segmentedControl verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="2Fg-CS-ulZ">
+                        <rect key="frame" x="359" y="578" width="282" height="24"/>
+                        <segmentedCell key="cell" borderStyle="border" alignment="left" style="rounded" trackingMode="selectOne" id="S3a-rK-9zm">
+                            <font key="font" metaFont="system"/>
+                            <segments>
+                                <segment label="Install Key Bindings" width="138" selected="YES"/>
+                                <segment label="Usage" width="137" tag="1"/>
+                            </segments>
+                        </segmentedCell>
+                        <connections>
+                            <action selector="switchInstructions:" target="-2" id="4wx-nt-h80"/>
+                        </connections>
+                    </segmentedControl>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="VOL-kt-VV6" firstAttribute="leading" secondItem="se5-gp-TjO" secondAttribute="leading" constant="20" id="1ak-9G-DyU"/>
-                    <constraint firstItem="8ZN-wE-bYO" firstAttribute="top" secondItem="VOL-kt-VV6" secondAttribute="bottom" constant="20" id="Cd4-jC-FQp"/>
+                    <constraint firstItem="2Fg-CS-ulZ" firstAttribute="centerX" secondItem="se5-gp-TjO" secondAttribute="centerX" id="3T8-a0-LlD"/>
+                    <constraint firstItem="2Fg-CS-ulZ" firstAttribute="top" secondItem="se5-gp-TjO" secondAttribute="top" constant="20" id="9fL-c0-mFP"/>
                     <constraint firstAttribute="trailing" secondItem="8ZN-wE-bYO" secondAttribute="trailing" constant="20" id="Emr-WE-EcG"/>
-                    <constraint firstAttribute="trailing" secondItem="VOL-kt-VV6" secondAttribute="trailing" constant="20" id="MhM-sz-pPZ"/>
+                    <constraint firstItem="8ZN-wE-bYO" firstAttribute="top" secondItem="2Fg-CS-ulZ" secondAttribute="bottom" constant="20" id="Gej-xh-vBK"/>
                     <constraint firstAttribute="bottom" secondItem="8ZN-wE-bYO" secondAttribute="bottom" constant="20" id="f5i-yk-gps"/>
                     <constraint firstItem="8ZN-wE-bYO" firstAttribute="leading" secondItem="se5-gp-TjO" secondAttribute="leading" constant="20" id="mQA-gw-gXj"/>
                 </constraints>

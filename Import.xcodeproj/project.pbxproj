@@ -17,8 +17,9 @@
 		9624F56A1DA43CBD005B57F4 /* SourceEditorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9624F5691DA43CBD005B57F4 /* SourceEditorExtension.swift */; };
 		9624F56C1DA43CBD005B57F4 /* SourceEditorCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9624F56B1DA43CBD005B57F4 /* SourceEditorCommand.swift */; };
 		9624F5701DA43CBD005B57F4 /* ImportExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 9624F5621DA43CBD005B57F4 /* ImportExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		96514D1B1DA532CC0061F17B /* usage.mov in Resources */ = {isa = PBXBuildFile; fileRef = 96514D1A1DA532CC0061F17B /* usage.mov */; };
 		965BF2721DA4F3DF00A43900 /* Default.idekeybindings in Resources */ = {isa = PBXBuildFile; fileRef = 965BF2711DA4F3DF00A43900 /* Default.idekeybindings */; };
+		96A47E7B215CDF860016E62D /* installation.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 96A47E79215CDF860016E62D /* installation.mp4 */; };
+		96A47E7C215CDF860016E62D /* usage.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 96A47E7A215CDF860016E62D /* usage.mp4 */; };
 		96BFA7D71DA4B9CE005B37E2 /* AddImportOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BFA7D61DA4B9CE005B37E2 /* AddImportOperation.swift */; };
 		96E7A0F61DA4E82C0069F088 /* RootWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E7A0F41DA4E82C0069F088 /* RootWindowController.swift */; };
 		96E7A0F71DA4E82C0069F088 /* RootWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96E7A0F51DA4E82C0069F088 /* RootWindowController.xib */; };
@@ -76,8 +77,9 @@
 		9624F5691DA43CBD005B57F4 /* SourceEditorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceEditorExtension.swift; sourceTree = "<group>"; };
 		9624F56B1DA43CBD005B57F4 /* SourceEditorCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceEditorCommand.swift; sourceTree = "<group>"; };
 		9624F56D1DA43CBD005B57F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		96514D1A1DA532CC0061F17B /* usage.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = usage.mov; sourceTree = "<group>"; };
 		965BF2711DA4F3DF00A43900 /* Default.idekeybindings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Default.idekeybindings; sourceTree = "<group>"; };
+		96A47E79215CDF860016E62D /* installation.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = installation.mp4; sourceTree = "<group>"; };
+		96A47E7A215CDF860016E62D /* usage.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = usage.mp4; sourceTree = "<group>"; };
 		96BFA7D61DA4B9CE005B37E2 /* AddImportOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddImportOperation.swift; sourceTree = "<group>"; };
 		96E7A0F41DA4E82C0069F088 /* RootWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RootWindowController.swift; path = Windows/RootWindowController.swift; sourceTree = "<group>"; };
 		96E7A0F51DA4E82C0069F088 /* RootWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RootWindowController.xib; path = Windows/RootWindowController.xib; sourceTree = "<group>"; };
@@ -190,8 +192,9 @@
 		965BF2701DA4F3DF00A43900 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				96A47E79215CDF860016E62D /* installation.mp4 */,
+				96A47E7A215CDF860016E62D /* usage.mp4 */,
 				961F64411DB67A6F00F7E05A /* open_system_preferences.scpt */,
-				96514D1A1DA532CC0061F17B /* usage.mov */,
 				965BF2711DA4F3DF00A43900 /* Default.idekeybindings */,
 			);
 			path = Resources;
@@ -341,11 +344,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				96514D1B1DA532CC0061F17B /* usage.mov in Resources */,
+				96A47E7B215CDF860016E62D /* installation.mp4 in Resources */,
 				961F64421DB67A6F00F7E05A /* open_system_preferences.scpt in Resources */,
 				96F9FF631DEED081009A0AE6 /* RootWindowController_Sandbox.xib in Resources */,
 				96E7A0F71DA4E82C0069F088 /* RootWindowController.xib in Resources */,
 				9624F5461DA43C9B005B57F4 /* Assets.xcassets in Resources */,
+				96A47E7C215CDF860016E62D /* usage.mp4 in Resources */,
 				965BF2721DA4F3DF00A43900 /* Default.idekeybindings in Resources */,
 				9624F5491DA43C9B005B57F4 /* MainMenu.xib in Resources */,
 			);
