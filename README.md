@@ -1,5 +1,7 @@
 # Import ☝️
-Xcode extension for adding imports from anywhere in the code
+Xcode extension for adding imports from anywhere in the code. 
+
+Now available on [App Store](https://itunes.apple.com/ie/app/import/id1167060791?mt=12)
 
 ![usage.gif](/Resources/usage.gif)
 
@@ -8,6 +10,10 @@ Because sometimes you are on 300th line of code and scrolling up just to add an 
 This was built to replace [Peckham](https://github.com/markohlebar/Peckham), as  decided to drop support for Xcode plugins in Xcode 8. 
 
 ### Installation Guide (Xcode 8 / OSX 10.11+)
+
+- get it on [App Store](https://itunes.apple.com/ie/app/import/id1167060791?mt=12)
+
+OR
 
 - close Xcode
 - (*OSX 10.11 only*) `sudo /usr/libexec/xpccachectl`
