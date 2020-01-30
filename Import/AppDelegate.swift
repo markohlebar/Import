@@ -17,7 +17,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         return Sandboxing.isAppSandboxed() ? "RootWindowController_Sandbox": "RootWindowController"
     }()
 
-    lazy var rootWindowController: RootWindowController = RootWindowController(windowNibName: NSNib.Name(rawValue: self.nibName))
+    lazy var rootWindowController: RootWindowController = RootWindowController(windowNibName: self.nibName)
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Insert code here to initialize your application
