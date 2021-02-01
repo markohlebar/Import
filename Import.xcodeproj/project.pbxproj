@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		36DF7AEF25C7E3D1007EAFD8 /* XcodeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36DF7AEE25C7E3D1007EAFD8 /* XcodeKit.framework */; };
+		36DF7AF025C7E3D1007EAFD8 /* XcodeKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 36DF7AEE25C7E3D1007EAFD8 /* XcodeKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		591C66171DC6477200FD0FCD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 591C66161DC6477200FD0FCD /* Assets.xcassets */; };
 		961F64421DB67A6F00F7E05A /* open_system_preferences.scpt in Resources */ = {isa = PBXBuildFile; fileRef = 961F64411DB67A6F00F7E05A /* open_system_preferences.scpt */; };
 		9624F5441DA43C9B005B57F4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9624F5431DA43C9B005B57F4 /* AppDelegate.swift */; };
@@ -46,6 +48,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		36DF7AF125C7E3D1007EAFD8 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				36DF7AF025C7E3D1007EAFD8 /* XcodeKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9624F5741DA43CBD005B57F4 /* Embed App Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -60,6 +73,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		36DF7AEE25C7E3D1007EAFD8 /* XcodeKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XcodeKit.framework; path = Library/Frameworks/XcodeKit.framework; sourceTree = DEVELOPER_DIR; };
 		591C66161DC6477200FD0FCD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		59CB44F21DD6270F001B7678 /* Import.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Import.entitlements; sourceTree = "<group>"; };
 		961F64411DB67A6F00F7E05A /* open_system_preferences.scpt */ = {isa = PBXFileReference; lastKnownFileType = text; path = open_system_preferences.scpt; sourceTree = "<group>"; };
@@ -108,6 +122,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9624F5651DA43CBD005B57F4 /* Cocoa.framework in Frameworks */,
+				36DF7AEF25C7E3D1007EAFD8 /* XcodeKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -163,6 +178,7 @@
 		9624F5631DA43CBD005B57F4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				36DF7AEE25C7E3D1007EAFD8 /* XcodeKit.framework */,
 				9624F5641DA43CBD005B57F4 /* Cocoa.framework */,
 			);
 			name = Frameworks;
@@ -273,6 +289,7 @@
 				9624F55E1DA43CBD005B57F4 /* Sources */,
 				9624F55F1DA43CBD005B57F4 /* Frameworks */,
 				9624F5601DA43CBD005B57F4 /* Resources */,
+				36DF7AF125C7E3D1007EAFD8 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
