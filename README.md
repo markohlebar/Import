@@ -42,4 +42,8 @@ Import uses Xcode's autocomplete, this works best when written inside a function
 
 ### License
 
-MIT, see LICENSE
+MIT, see LICENSE.
+
+### Privacy 
+
+This app doesn't collect any of your data.
